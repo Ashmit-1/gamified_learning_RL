@@ -48,6 +48,15 @@ body {
     overflow: hidden;
 }
 
+.app-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    object-fit: cover;
+}
+
 .card:hover {
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.2);
