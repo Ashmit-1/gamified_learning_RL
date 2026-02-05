@@ -1,8 +1,11 @@
 const API_URL = 'http://localhost:8000';
 
-let questions = [];
-let currentIndex = 0;
+// Session state for RL-based quiz
+let sessionId = null;
+let currentQuestion = null;
 let score = 0;
+let questionCount = 0;
+let totalQuestions = 10;
 let userResponses = [];
 
 // Game Variables
@@ -23,7 +26,6 @@ let player = {
     isHit: false
 };
 
-
 // DOM Elements
 const startScreen = document.getElementById('start-screen');
 const loadingScreen = document.getElementById('loading-screen');
@@ -42,12 +44,21 @@ const progressFill = document.getElementById('progress-fill');
 const currentScoreSpan = document.getElementById('current-score');
 const finalScore = document.getElementById('final-score');
 const totalQuestionsSpan = document.getElementById('total-questions');
+const feedbackText = document.getElementById('feedback-text');
+const nextIterBtn = document.getElementById('next-iter-btn');
+
 
 // Event Listeners
-startBtn.addEventListener('click', generateQuiz);
+startBtn.addEventListener('click', startQuiz);
+nextIterBtn.addEventListener('click', () => {
+    resultScreen.classList.add('hidden');
+    startQuiz();
+});
 restartBtn.addEventListener('click', resetQuiz);
 reviewBtn.addEventListener('click', toggleReview);
 
+
+// Game functions
 function initGame() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -66,12 +77,10 @@ function spawnHurdle() {
         speed: 5,
         passed: false,
         triggered: false,
-        isMoving: true, // Start moving immediately
-        outcome: null // 'jump' or 'hit'
+        isMoving: true,
+        outcome: null
     };
 }
-
-
 
 function updateGame() {
     if (!gameActive) return;
@@ -120,7 +129,7 @@ function updateGame() {
         ctx.fillStyle = '#94a3b8';
         ctx.fillRect(hurdle.x, hurdle.y, hurdle.width, hurdle.height);
 
-        // Check for trigger point (near player)
+        // Check for trigger point
         if (hurdle.isMoving && hurdle.x < player.x + 80 && !hurdle.triggered && hurdle.outcome) {
             hurdle.triggered = true;
             if (hurdle.outcome === 'jump') {
@@ -143,11 +152,8 @@ function updateGame() {
 
         if (hurdle.x + hurdle.width < 0) {
             hurdle = null;
-            // Hurdle has finished its turn
-            setTimeout(proceedToNextQuestion, 500);
         }
     }
-
 
     if (gameActive) {
         requestAnimationFrame(updateGame);
@@ -161,19 +167,31 @@ function jump() {
     }
 }
 
+// RL Quiz Functions
+// RL Quiz Functions
+async function startQuiz() {
+    let topic = topicInput.value.trim();
 
-async function generateQuiz() {
-    const topic = topicInput.value.trim();
+    // Check local storage if no input
+    if (!topic) {
+        topic = localStorage.getItem('current_topic');
+    }
+
     if (!topic) {
         alert('Please enter a topic!');
         return;
     }
 
+    // Save topic
+    localStorage.setItem('current_topic', topic);
+
+    console.log('[Frontend] Starting quiz for topic:', topic);
+
     startScreen.classList.add('hidden');
     loadingScreen.classList.remove('hidden');
 
     try {
-        const response = await fetch(`${API_URL}/generate-quiz`, {
+        const response = await fetch(`${API_URL}/start-quiz`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -182,38 +200,37 @@ async function generateQuiz() {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to generate quiz');
+            throw new Error('Failed to start quiz');
         }
 
         const data = await response.json();
-        questions = data.questions;
-        startQuiz();
+        sessionId = data.session_id;
+        currentQuestion = data.question;
+
+        // Initialize quiz state
+        score = 0;
+        questionCount = 1;
+        userResponses = [];
+        currentScoreSpan.textContent = '0';
+
+        loadingScreen.classList.add('hidden');
+        quizScreen.classList.remove('hidden');
+        reviewSection.classList.add('hidden');
+
+        initGame();
+        showQuestion(currentQuestion);
+
     } catch (error) {
-        console.error(error);
-        alert('An error occurred while generating the quiz. Check if the backend is running and configured.');
-        resetQuiz();
+        console.error('[Frontend] Error in startQuiz:', error);
+        alert('An error occurred while starting the quiz. Check if the backend is running.');
+        resetQuiz("startQuiz_error");
     }
 }
 
-function startQuiz() {
-    currentIndex = 0;
-    score = 0;
-    userResponses = [];
-    currentScoreSpan.textContent = '0';
-    loadingScreen.classList.add('hidden');
-    quizScreen.classList.remove('hidden');
-    reviewSection.classList.add('hidden');
-
-    initGame();
-    showQuestion();
-}
-
-
-function showQuestion() {
-    const question = questions[currentIndex];
+function showQuestion(question) {
     questionText.textContent = question.text;
-    progressText.textContent = `Question ${currentIndex + 1} of ${questions.length}`;
-    progressFill.style.width = `${((currentIndex + 1) / questions.length) * 100}%`;
+    progressText.textContent = `Question ${questionCount} of ${totalQuestions}`;
+    progressFill.style.width = `${(questionCount / totalQuestions) * 100}%`;
 
     optionsContainer.innerHTML = '';
     question.options.forEach(option => {
@@ -227,17 +244,15 @@ function showQuestion() {
     spawnHurdle();
 }
 
-
-function handleAnswer(selectedOption, button) {
-    const question = questions[currentIndex];
+async function handleAnswer(selectedOption, button) {
     const allButtons = optionsContainer.querySelectorAll('.option-btn');
 
-    // Disable all buttons after selection
+    // Disable all buttons
     allButtons.forEach(btn => btn.style.pointerEvents = 'none');
 
-    const isCorrect = selectedOption === question.correct_answer;
+    const isCorrect = selectedOption === currentQuestion.correct_answer;
 
-    // Set game outcome and start movement
+    // Set game outcome
     if (hurdle) {
         hurdle.outcome = isCorrect ? 'jump' : 'hit';
         hurdle.isMoving = true;
@@ -245,9 +260,9 @@ function handleAnswer(selectedOption, button) {
 
     // Save response
     userResponses.push({
-        question: question.text,
+        question: currentQuestion.text,
         selected: selectedOption,
-        correct: question.correct_answer,
+        correct: currentQuestion.correct_answer,
         isCorrect: isCorrect
     });
 
@@ -259,34 +274,93 @@ function handleAnswer(selectedOption, button) {
         button.classList.add('wrong');
         // Show correct answer
         allButtons.forEach(btn => {
-            if (btn.textContent === question.correct_answer) {
+            if (btn.textContent === currentQuestion.correct_answer) {
                 btn.classList.add('correct');
             }
         });
     }
-}
 
-function proceedToNextQuestion() {
-    currentIndex++;
-    if (currentIndex < questions.length) {
-        showQuestion();
-    } else {
-        gameActive = false;
-        showResult();
+    // Submit answer to backend
+    try {
+        const response = await fetch(`${API_URL}/submit-answer`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                session_id: sessionId,
+                answer: selectedOption,
+                question_id: currentQuestion.id
+            }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to submit answer');
+        }
+
+        const data = await response.json();
+        console.log('[Frontend] Submit response:', data);
+
+        // Wait for game animation
+        setTimeout(() => {
+            try {
+                if (data.quiz_complete) {
+                    console.log('[Frontend] Quiz complete! Showing results...');
+                    console.log('[Frontend] Summary:', data.summary);
+                    gameActive = false;
+                    showResult(data.summary);
+                } else {
+                    questionCount++;
+                    currentQuestion = data.next_question;
+                    showQuestion(currentQuestion);
+                }
+            } catch (err) {
+                console.error('[Frontend] Error in setTimeout callback:', err);
+            }
+        }, 2000);
+
+    } catch (error) {
+        console.error('[Frontend] Error submitting answer:', error);
+        alert('Error submitting answer. Please try again.');
     }
 }
 
+function showResult(summary) {
+    console.log('[Frontend] showResult called with:', summary);
 
+    // Safety check
+    if (!summary) {
+        console.error('[Frontend] showResult: summary is null/undefined!');
+        // Fall back to local data
+        summary = {
+            correct_answers: score,
+            questions_answered: questionCount,
+            accuracy: score / questionCount,
+            learning_maturity: 'Unknown',
+            epsilon: 0
+        };
+    }
 
-function showResult() {
     quizScreen.classList.add('hidden');
     resultScreen.classList.remove('hidden');
-    finalScore.textContent = score;
-    totalQuestionsSpan.textContent = questions.length;
+    console.log('[Frontend] Result screen should now be visible');
 
-    // Build Review UI
+    finalScore.textContent = summary.correct_answers || score;
+    totalQuestionsSpan.textContent = summary.questions_answered || questionCount;
+
+    const accuracy = ((summary.accuracy || 0) * 100).toFixed(1);
+    const epsilon = summary.epsilon ? summary.epsilon.toFixed(3) : '0.000';
+    const maturity = summary.learning_maturity || 'Unknown';
+
+    feedbackText.innerHTML = `
+        Accuracy: ${accuracy}%<br>
+        RL Maturity: <strong>${maturity}</strong><br>
+        Current ε (Exploration): ${epsilon}
+    `;
+
     buildReview();
 }
+
 
 function buildReview() {
     reviewContainer.innerHTML = '';
@@ -308,7 +382,6 @@ function toggleReview() {
     if (isHidden) {
         reviewSection.classList.remove('hidden');
         reviewBtn.textContent = 'Hide Review';
-        // Scroll to review
         setTimeout(() => {
             reviewSection.scrollIntoView({ behavior: 'smooth' });
         }, 100);
@@ -318,12 +391,18 @@ function toggleReview() {
     }
 }
 
-function resetQuiz() {
+function resetQuiz(reason = "user_action") {
+    console.log('[Frontend] Resetting quiz. Reason:', reason);
+    localStorage.removeItem('current_topic');
+
     resultScreen.classList.add('hidden');
     loadingScreen.classList.add('hidden');
     quizScreen.classList.add('hidden');
+
     startScreen.classList.remove('hidden');
+
     topicInput.value = '';
     gameActive = false;
+    sessionId = null;
+    currentQuestion = null;
 }
-
