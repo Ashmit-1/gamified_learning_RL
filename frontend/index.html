@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Quiz Master</title>
+    <title>Reinforcement Learning Quiz Master</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
     <div class="container">
         <!-- Start Screen -->
         <div id="start-screen" class="card">
-            <h1>AI Quiz Master</h1>
+            <h1>Reinforcement Learning Quiz Master</h1>
             <p>Enter a topic to generate a personalized AI quiz!</p>
             <div class="input-group">
                 <input type="text" id="topic-input" placeholder="e.g. Reinforcement Learning, Physics, Star Wars...">
@@ -29,6 +29,9 @@
 
         <!-- Quiz Screen -->
         <div id="quiz-screen" class="card hidden">
+            <div id="game-wrapper">
+                <canvas id="game-canvas"></canvas>
+            </div>
             <div class="quiz-header">
                 <div class="header-top">
                     <span id="progress-text">Question 1 of 10</span>

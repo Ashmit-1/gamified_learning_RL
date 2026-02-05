@@ -5,6 +5,25 @@ let currentIndex = 0;
 let score = 0;
 let userResponses = [];
 
+// Game Variables
+const canvas = document.getElementById('game-canvas');
+const ctx = canvas.getContext('2d');
+let gameActive = false;
+let hurdle = null;
+let player = {
+    x: 50,
+    y: 100,
+    width: 30,
+    height: 30,
+    dy: 0,
+    jumpForce: -12,
+    gravity: 0.6,
+    isJumping: false,
+    groundY: 100,
+    isHit: false
+};
+
+
 // DOM Elements
 const startScreen = document.getElementById('start-screen');
 const loadingScreen = document.getElementById('loading-screen');
@@ -28,6 +47,120 @@ const totalQuestionsSpan = document.getElementById('total-questions');
 startBtn.addEventListener('click', generateQuiz);
 restartBtn.addEventListener('click', resetQuiz);
 reviewBtn.addEventListener('click', toggleReview);
+
+function initGame() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    player.groundY = canvas.height - 40;
+    player.y = player.groundY;
+    gameActive = true;
+    requestAnimationFrame(updateGame);
+}
+
+function spawnHurdle() {
+    hurdle = {
+        x: canvas.width,
+        y: canvas.height - 40,
+        width: 15,
+        height: 30,
+        speed: 5,
+        passed: false,
+        triggered: false,
+        isMoving: true, // Start moving immediately
+        outcome: null // 'jump' or 'hit'
+    };
+}
+
+
+
+function updateGame() {
+    if (!gameActive) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw Floor
+    ctx.strokeStyle = '#334155';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(0, canvas.height - 10);
+    ctx.lineTo(canvas.width, canvas.height - 10);
+    ctx.stroke();
+
+    // Player Physics
+    if (player.isJumping) {
+        player.dy += player.gravity;
+        player.y += player.dy;
+        if (player.y >= player.groundY) {
+            player.y = player.groundY;
+            player.isJumping = false;
+            player.dy = 0;
+        }
+    }
+
+    // Draw Player
+    ctx.fillStyle = player.isHit ? '#ef4444' : '#6366f1';
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = player.isHit ? '#ef4444' : '#6366f1';
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+    ctx.shadowBlur = 0;
+
+    // Hurdle Logic
+    if (hurdle) {
+        if (hurdle.isMoving) {
+            hurdle.x -= hurdle.speed;
+
+            // Stop near the player if hasn't been answered yet
+            if (!hurdle.outcome && hurdle.x < player.x + 170) {
+                hurdle.x = player.x + 170;
+                hurdle.isMoving = false;
+            }
+        }
+
+        // Draw Hurdle
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillRect(hurdle.x, hurdle.y, hurdle.width, hurdle.height);
+
+        // Check for trigger point (near player)
+        if (hurdle.isMoving && hurdle.x < player.x + 80 && !hurdle.triggered && hurdle.outcome) {
+            hurdle.triggered = true;
+            if (hurdle.outcome === 'jump') {
+                jump();
+            }
+        }
+
+        // Collision Check
+        if (hurdle.isMoving && hurdle.x < player.x + player.width &&
+            hurdle.x + hurdle.width > player.x &&
+            hurdle.y < player.y + player.height &&
+            !hurdle.passed) {
+
+            if (!player.isJumping) {
+                player.isHit = true;
+                setTimeout(() => player.isHit = false, 500);
+                hurdle.passed = true;
+            }
+        }
+
+        if (hurdle.x + hurdle.width < 0) {
+            hurdle = null;
+            // Hurdle has finished its turn
+            setTimeout(proceedToNextQuestion, 500);
+        }
+    }
+
+
+    if (gameActive) {
+        requestAnimationFrame(updateGame);
+    }
+}
+
+function jump() {
+    if (!player.isJumping) {
+        player.isJumping = true;
+        player.dy = player.jumpForce;
+    }
+}
+
 
 async function generateQuiz() {
     const topic = topicInput.value.trim();
@@ -70,8 +203,11 @@ function startQuiz() {
     loadingScreen.classList.add('hidden');
     quizScreen.classList.remove('hidden');
     reviewSection.classList.add('hidden');
+
+    initGame();
     showQuestion();
 }
+
 
 function showQuestion() {
     const question = questions[currentIndex];
@@ -87,7 +223,10 @@ function showQuestion() {
         button.addEventListener('click', () => handleAnswer(option, button));
         optionsContainer.appendChild(button);
     });
+
+    spawnHurdle();
 }
+
 
 function handleAnswer(selectedOption, button) {
     const question = questions[currentIndex];
@@ -97,6 +236,12 @@ function handleAnswer(selectedOption, button) {
     allButtons.forEach(btn => btn.style.pointerEvents = 'none');
 
     const isCorrect = selectedOption === question.correct_answer;
+
+    // Set game outcome and start movement
+    if (hurdle) {
+        hurdle.outcome = isCorrect ? 'jump' : 'hit';
+        hurdle.isMoving = true;
+    }
 
     // Save response
     userResponses.push({
@@ -119,17 +264,19 @@ function handleAnswer(selectedOption, button) {
             }
         });
     }
-
-    // Move to next question after delay
-    setTimeout(() => {
-        currentIndex++;
-        if (currentIndex < questions.length) {
-            showQuestion();
-        } else {
-            showResult();
-        }
-    }, 1500);
 }
+
+function proceedToNextQuestion() {
+    currentIndex++;
+    if (currentIndex < questions.length) {
+        showQuestion();
+    } else {
+        gameActive = false;
+        showResult();
+    }
+}
+
+
 
 function showResult() {
     quizScreen.classList.add('hidden');
@@ -177,4 +324,6 @@ function resetQuiz() {
     quizScreen.classList.add('hidden');
     startScreen.classList.remove('hidden');
     topicInput.value = '';
+    gameActive = false;
 }
+
