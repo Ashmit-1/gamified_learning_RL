@@ -1,0 +1,530 @@
+{
+  "easy_conceptual": [
+    {
+      "text": "What is a variable in Python?",
+      "options": [
+        "A value stored in memory",
+        "A keyword",
+        "A function parameter",
+        "A reserved word"
+      ],
+      "correct_answer": "A value stored in memory",
+      "id": "easy_conceptual_0_1008",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which of these is not a valid Python data type?",
+      "options": [
+        "int",
+        "float",
+        "string",
+        "array"
+      ],
+      "correct_answer": "array",
+      "id": "easy_conceptual_1_4053",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "How do you start a single-line comment in Python?",
+      "options": [
+        "#",
+        "//",
+        "/*",
+        "REM"
+      ],
+      "correct_answer": "#",
+      "id": "easy_conceptual_2_8310",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What does the print() function do?",
+      "options": [
+        "Displays text to the console",
+        "Returns the length of a string",
+        "Creates a new variable",
+        "Compares two values"
+      ],
+      "correct_answer": "Displays text to the console",
+      "id": "easy_conceptual_3_4915",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the result of 2 + 3 * 4 in Python?",
+      "options": [
+        "14",
+        "20",
+        "10",
+        "9"
+      ],
+      "correct_answer": "14",
+      "id": "easy_conceptual_4_6712",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which operator is used for exponentiation?",
+      "options": [
+        "**",
+        "^",
+        "++",
+        "//"
+      ],
+      "correct_answer": "**",
+      "id": "easy_conceptual_5_9252",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is a boolean in Python?",
+      "options": [
+        "A True/False value",
+        "A string type",
+        "A numeric type",
+        "A list of integers"
+      ],
+      "correct_answer": "A True/False value",
+      "id": "easy_conceptual_6_5174",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the purpose of the 'len()' function?",
+      "options": [
+        "To get the length of a sequence",
+        "To create a new variable",
+        "To convert a string to a number",
+        "To sort a list"
+      ],
+      "correct_answer": "To get the length of a sequence",
+      "id": "easy_conceptual_7_9878",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the difference between '==' and '=' in Python?",
+      "options": [
+        "'==' compares values, '=' assigns values",
+        "'=' compares values, '==' assigns values",
+        "They are the same",
+        "'==' is invalid syntax"
+      ],
+      "correct_answer": "'==' compares values, '=' assigns values",
+      "id": "easy_conceptual_8_3814",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which keyword is used to define a function in Python?",
+      "options": [
+        "def",
+        "func",
+        "define",
+        "function"
+      ],
+      "correct_answer": "def",
+      "id": "easy_conceptual_9_6193",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    }
+  ],
+  "medium_application": [
+    {
+      "text": "What is the output of this code? `x = 5; print(x % 2)`",
+      "options": [
+        "1",
+        "0",
+        "5",
+        "2"
+      ],
+      "correct_answer": "1",
+      "id": "medium_application_0_7181",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What is the result of this code? `a = [1, 2, 3]; a.append(4); print(a)`",
+      "options": [
+        "[1, 2, 3, 4]",
+        "[4]",
+        "[1, 2, 3]",
+        "Error"
+      ],
+      "correct_answer": "[1, 2, 3, 4]",
+      "id": "medium_application_1_9405",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What is the output of: `for i in range(3): print(i)`",
+      "options": [
+        "0\n1\n2",
+        "1\n2\n3",
+        "3",
+        "Error"
+      ],
+      "correct_answer": "0\n1\n2",
+      "id": "medium_application_2_5157",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What does `s = 'hello'; s.upper()` return?",
+      "options": [
+        "HELLO",
+        "hello",
+        "Hello",
+        "Error"
+      ],
+      "correct_answer": "HELLO",
+      "id": "medium_application_3_2078",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What is the output? `d = {'a':1, 'b':2}; print(d.get('c', 3))`",
+      "options": [
+        "3",
+        "None",
+        "Error",
+        "2"
+      ],
+      "correct_answer": "3",
+      "id": "medium_application_4_3775",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What is the result of: `x = 10; y = 5; print(x if x < y else y)`",
+      "options": [
+        "5",
+        "10",
+        "Error",
+        "None"
+      ],
+      "correct_answer": "5",
+      "id": "medium_application_5_5093",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "Which line has an error? `x = 5\nif x == 5: print('Yes')\nelif x == 5: print('No')`",
+      "options": [
+        "The second line",
+        "The third line",
+        "The fourth line",
+        "No error"
+      ],
+      "correct_answer": "The fourth line",
+      "id": "medium_application_6_6382",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What is the output? `a = [1, 2]; b = a; b[0] = 99; print(a)`",
+      "options": [
+        "[99, 2]",
+        "[1, 2]",
+        "Error",
+        "None"
+      ],
+      "correct_answer": "[99, 2]",
+      "id": "medium_application_7_1439",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What does `s = 'abc'; s[1:2]` return?",
+      "options": [
+        "b",
+        "'bc'",
+        "ab",
+        "Error"
+      ],
+      "correct_answer": "b",
+      "id": "medium_application_8_3490",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "What is the output? `x = 5; y = 2; print(x ** y)`",
+      "options": [
+        "25",
+        "10",
+        "7",
+        "3"
+      ],
+      "correct_answer": "25",
+      "id": "medium_application_9_3441",
+      "difficulty": "medium",
+      "question_type": "application"
+    }
+  ],
+  "hard_problem_solving": [
+    {
+      "text": "What is the output? `def f(x): return x+1; print(f(5) if 5>3 else f(3))`",
+      "options": [
+        "6",
+        "4",
+        "5",
+        "Error"
+      ],
+      "correct_answer": "6",
+      "id": "hard_problem_solving_0_9724",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the result of this code? `x = 0; while x < 5: x += 1; print(x, end=' ')`",
+      "options": [
+        "1 2 3 4 5",
+        "1 2 3 4",
+        "0 1 2 3 4",
+        "Error"
+      ],
+      "correct_answer": "1 2 3 4 5",
+      "id": "hard_problem_solving_1_8055",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `a = [1]; b = a; a.append(2); b.append(3); print(a)`",
+      "options": [
+        "[1, 2, 3]",
+        "[1, 2]",
+        "[1]",
+        "Error"
+      ],
+      "correct_answer": "[1, 2, 3]",
+      "id": "hard_problem_solving_2_7682",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `x = 5; print(x if x%2==0 else x+1)`",
+      "options": [
+        "6",
+        "5",
+        "4",
+        "Error"
+      ],
+      "correct_answer": "6",
+      "id": "hard_problem_solving_3_4866",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the result of this code? `s = 'abc'; print(s[1:] + s[:1])`",
+      "options": [
+        "bca",
+        "abc",
+        "abcc",
+        "Error"
+      ],
+      "correct_answer": "bca",
+      "id": "hard_problem_solving_4_1898",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `d = {'a':1}; d['b'] = d.get('b', 0) + 1; print(d['b'])`",
+      "options": [
+        "1",
+        "0",
+        "Error",
+        "None"
+      ],
+      "correct_answer": "1",
+      "id": "hard_problem_solving_5_6215",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `x = 5; def f(): global x; x = 10; f(); print(x)`",
+      "options": [
+        "10",
+        "5",
+        "Error",
+        "None"
+      ],
+      "correct_answer": "10",
+      "id": "hard_problem_solving_6_4587",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `a = [1,2,3]; b = a; a = [4,5]; print(b)`",
+      "options": [
+        "[1, 2, 3]",
+        "[4, 5]",
+        "Error",
+        "None"
+      ],
+      "correct_answer": "[1, 2, 3]",
+      "id": "hard_problem_solving_7_2859",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `x = 1; while x < 5: if x%2 == 0: break; x += 1; print(x)`",
+      "options": [
+        "1",
+        "2",
+        "5",
+        "4"
+      ],
+      "correct_answer": "2",
+      "id": "hard_problem_solving_8_2229",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the output? `x = 0; for i in range(3): x += i; print(x)`",
+      "options": [
+        "3",
+        "2",
+        "1",
+        "0"
+      ],
+      "correct_answer": "3",
+      "id": "hard_problem_solving_9_1221",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    }
+  ],
+  "easy_revision": [
+    {
+      "text": "How do you import a module named 'math'?",
+      "options": [
+        "import math",
+        "include math",
+        "require math",
+        "use math"
+      ],
+      "correct_answer": "import math",
+      "id": "easy_revision_0_4158",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the correct way to create a tuple with one item?",
+      "options": [
+        "(1,)",
+        "(1)",
+        "[1]",
+        "1"
+      ],
+      "correct_answer": "(1,)",
+      "id": "easy_revision_1_1537",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "How do you reverse a list named 'my_list'?",
+      "options": [
+        "my_list[::-1]",
+        "my_list.reverse()",
+        "sorted(my_list, reverse=True)",
+        "All of the above"
+      ],
+      "correct_answer": "All of the above",
+      "id": "easy_revision_2_9489",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What does the 'range(5)' function return?",
+      "options": [
+        "0 to 4",
+        "1 to 5",
+        "0 to 5",
+        "5 to 10"
+      ],
+      "correct_answer": "0 to 4",
+      "id": "easy_revision_3_5684",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "How do you create a dictionary?",
+      "options": [
+        "{key: value}",
+        "[key: value]",
+        "(key: value)",
+        "dict(key=value)"
+      ],
+      "correct_answer": "{key: value}",
+      "id": "easy_revision_4_5888",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What does the 'pass' keyword do?",
+      "options": [
+        "Does nothing, used as a placeholder",
+        "Exits a loop",
+        "Returns a value",
+        "Raises an error"
+      ],
+      "correct_answer": "Does nothing, used as a placeholder",
+      "id": "easy_revision_5_6180",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "How do you format a string with variables?",
+      "options": [
+        "f\"{variable}\"",
+        "string.format()",
+        "% operator",
+        "All of the above"
+      ],
+      "correct_answer": "All of the above",
+      "id": "easy_revision_6_9565",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the purpose of a docstring?",
+      "options": [
+        "To document a function/module",
+        "To define variables",
+        "To execute code",
+        "To store data"
+      ],
+      "correct_answer": "To document a function/module",
+      "id": "easy_revision_7_6529",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "How do you open a file in read mode?",
+      "options": [
+        "open('file.txt', 'r')",
+        "open('file.txt', 'w')",
+        "open('file.txt', 'a')",
+        "open('file.txt')"
+      ],
+      "correct_answer": "open('file.txt', 'r')",
+      "id": "easy_revision_8_6145",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What does the 'append()' method do?",
+      "options": [
+        "Adds an item to a list",
+        "Removes an item from a list",
+        "Sorts a list",
+        "Reverses a list"
+      ],
+      "correct_answer": "Adds an item to a list",
+      "id": "easy_revision_9_1813",
+      "difficulty": "easy",
+      "question_type": "revision"
+    }
+  ]
+}
