@@ -30,29 +30,48 @@ class StudentSession:
     7. Transition to next state
     """
     
-    def __init__(self, topic: str, agent: QLearningAgent):
+    def __init__(self, topic: str, agent: QLearningAgent, pool: Dict[str, List[Dict]]):
         """
         Initialize a new session.
         
         Args:
             topic: Learning topic
             agent: RL agent instance
+            pool: Pre-generated question pool
         """
         self.session_id = str(uuid.uuid4())
         self.topic = topic
         self.agent = agent
+        self.pool = pool
+        
+        # Track usage per category
+        self.category_usage = {
+            "easy_conceptual": 0,
+            "medium_application": 0,
+            "hard_problem_solving": 0,
+            "easy_revision": 0
+        }
+        
+        # Map RL action IDs to pool category names
+        self.id_to_category = {
+            0: "easy_conceptual",
+            1: "medium_application",
+            2: "hard_problem_solving",
+            3: "easy_revision"
+        }
         
         # Session state
         self.answer_history: List[Dict] = []
         self.current_state: Optional[Tuple[int, int]] = None
         self.current_action: Optional[int] = None
+        self.current_question: Optional[Dict] = None
         self.question_count = 0
         
         # Initialize state
         self.current_state = compute_state([])
         
         print(f"\n{'='*60}")
-        print(f"[SESSION] Started new quiz session for topic: {topic}")
+        print(f"[SESSION] Started new quiz session (POOL BASED) for topic: {topic}")
         print(f"[SESSION] Session ID: {self.session_id}")
         print(f"[SESSION] Initial state: {self._state_to_string(self.current_state)}")
         print(f"{'='*60}\n")
@@ -63,30 +82,39 @@ class StudentSession:
         accuracy_map = {0: "Poor", 1: "Good"}
         return f"(Mastery: {mastery_map[state[0]]}, Recent: {accuracy_map[state[1]]})"
     
-    def get_next_question_params(self) -> Dict:
+    def get_next_question(self) -> Dict:
         """
-        Use RL agent to select next teaching action and return question parameters.
+        Use RL agent to select next action and pick the corresponding question from the pool.
         
         Returns:
-            Dict with 'difficulty', 'question_type', 'action_name'
+            The selected question dictionary.
         """
         # Select action using epsilon-greedy
         self.current_action = self.agent.select_action(self.current_state, training=True)
-        
-        # Get question parameters from action
-        difficulty, question_type = ACTION_TO_PARAMS[self.current_action]
+        category = self.id_to_category[self.current_action]
         action_name = ACTION_NAMES[self.current_action]
         
+        # Pick question from category based on usage
+        index = self.category_usage[category]
+        
+        # If we ran out of questions in this category, loop back (unlikely but safe)
+        if index >= len(self.pool[category]):
+            index = index % len(self.pool[category])
+            print(f"[SESSION WARNING] Category '{category}' exhausted! Reusing question.")
+            
+        question = self.pool[category][index]
+        self.category_usage[category] += 1
+        self.current_question = question
         self.question_count += 1
         
         print(f"[RL STEP {self.question_count}]")
         print(f"  State: {self._state_to_string(self.current_state)}")
         print(f"  Action: {action_name} (A{self.current_action})")
+        print(f"  Source: Pool '{category}' (Index {index})")
         print(f"  ε: {self.agent.epsilon:.3f}")
         
         return {
-            "difficulty": difficulty,
-            "question_type": question_type,
+            "question": question,
             "action_name": action_name,
             "action_id": self.current_action
         }
@@ -99,14 +127,6 @@ class StudentSession:
     ) -> Dict:
         """
         Process student answer and update RL agent.
-        
-        Args:
-            correct: Whether answer was correct
-            difficulty: Question difficulty
-            question_text: The question asked
-            
-        Returns:
-            Dict with reward, Q-update info, and next state
         """
         # Record answer in history
         self.answer_history.append({
