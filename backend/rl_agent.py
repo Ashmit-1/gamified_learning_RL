@@ -53,7 +53,7 @@ class QLearningAgent:
     - A0: Easy conceptual question
     - A1: Medium application question
     - A2: Hard problem-solving question
-    - A3: Easy revision question
+    - A3: Easy revision question 
     """
     
     def __init__(
@@ -75,7 +75,7 @@ class QLearningAgent:
             epsilon_min: Minimum epsilon value
         """
         # Q-table: 6 states x 4 actions
-        self.q_table = np.zeros((6, 4))
+        self.q_table = np.full((6, 4), 1.0)
         
         # Hyperparameters
         self.alpha = alpha
@@ -237,7 +237,8 @@ def compute_state(answer_history: List[Dict]) -> Tuple[int, int]:
 def compute_reward(
     answer_correct: bool,
     old_state: Tuple[int, int],
-    new_state: Tuple[int, int]
+    new_state: Tuple[int, int], 
+    action: int
 ) -> float:
     """
     Compute reward signal that encourages long-term learning.
@@ -272,5 +273,16 @@ def compute_reward(
         reward += 2.0
     elif new_accuracy < old_accuracy:
         reward -= 1.0
-    
+
+    # Penalize lack of challenge when mastery is already high
+    # Penalize lack of challenge at high mastery
+    if old_state[0] == MASTERY_HIGH and action in (
+        ACTION_EASY_CONCEPTUAL,
+        ACTION_EASY_REVISION
+    ):
+        reward -= 1.5
+
+    if answer_correct and action == ACTION_HARD_PROBLEM:
+        reward += 3.0
+
     return reward

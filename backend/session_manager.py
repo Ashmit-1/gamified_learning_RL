@@ -139,7 +139,7 @@ class StudentSession:
         new_state = compute_state(self.answer_history)
         
         # Compute reward
-        reward = compute_reward(correct, self.current_state, new_state)
+        reward = compute_reward(correct, self.current_state, new_state, self.current_action)
         
         # Update Q-table
         old_q, new_q = self.agent.update(
