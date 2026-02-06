@@ -58,6 +58,28 @@ class SubmitAnswerResponse(BaseModel):
     summary: Optional[Dict]
 
 
+async def ensure_pool_healthy(topic: str, pool: dict):
+    """Check if any category in the pool is low and refill if needed."""
+    needs_refill = False
+    categories = ["easy_conceptual", "medium_application", "hard_problem_solving", "easy_revision"]
+    
+    for cat in categories:
+        if len(pool.get(cat, [])) < 3:
+            needs_refill = True
+            break
+            
+    if needs_refill:
+        print(f"[POOL] Category low for '{topic}'. Refilling...")
+        try:
+            # Generate a new pool of 40 and merge
+            new_questions = await generate_question_pool(topic)
+            for cat in categories:
+                pool[cat].extend(new_questions.get(cat, []))
+            save_pool(topic, pool, save_dir="pools")
+            print(f"[POOL] Refilled and saved for '{topic}'.")
+        except Exception as e:
+            print(f"[POOL ERROR] Auto-refill failed: {e}")
+
 @app.post("/start-quiz", response_model=StartQuizResponse)
 async def start_quiz(request: StartQuizRequest):
     """
@@ -72,7 +94,6 @@ async def start_quiz(request: StartQuizRequest):
     # Get or create RL agent for this topic
     if topic not in agents:
         agent = QLearningAgent()
-        # Try to load existing policy
         agent.load_policy(topic, save_dir="q_tables")
         agents[topic] = agent
     else:
@@ -82,21 +103,32 @@ async def start_quiz(request: StartQuizRequest):
     pool = load_pool(topic, save_dir="pools")
     
     if not pool:
-        # Generate new pool if none exists
         try:
             pool = await generate_question_pool(topic)
             save_pool(topic, pool, save_dir="pools")
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Failed to generate question pool: {str(e)}")
     
+    # Proactively check if pool needs more questions
+    await ensure_pool_healthy(topic, pool)
+    
     # Create new session with the pool
     session = StudentSession(topic, agent, pool)
     sessions[session.session_id] = session
     
     # Get first question from the pool
-    result = session.get_next_question()
+    try:
+        result = session.get_next_question()
+    except IndexError:
+        pool = await generate_question_pool(topic)
+        save_pool(topic, pool, save_dir="pools")
+        session.pool = pool
+        result = session.get_next_question()
+        
     question = result["question"]
     action_name = result["action_name"]
+    
+    save_pool(topic, session.pool, save_dir="pools")
     
     return {
         "session_id": session.session_id,
@@ -105,7 +137,6 @@ async def start_quiz(request: StartQuizRequest):
         "message": f"Quiz started! Learning with strategy: {action_name}"
     }
 
-
 @app.post("/submit-answer", response_model=SubmitAnswerResponse)
 async def submit_answer(request: SubmitAnswerRequest):
     """
@@ -113,46 +144,37 @@ async def submit_answer(request: SubmitAnswerRequest):
     Updates Q-table based on student performance.
     """
     session_id = request.session_id
-    
     if session_id not in sessions:
         raise HTTPException(status_code=404, detail="Session not found")
     
     session = sessions[session_id]
     current_question = session.current_question
-    
-    # Check if answer is correct
     correct = request.answer == current_question["correct_answer"]
     
-    # Process answer and update RL agent
     update_info = session.process_answer(
         correct,
         current_question["difficulty"],
         current_question["text"]
     )
     
-    # Check if quiz should end (e.g., after 10 questions)
     quiz_complete = session.question_count >= 10
-    
     next_question = None
     summary = None
     
     if quiz_complete:
-        # Save Q-table
         session.agent.save_policy(session.topic, save_dir="q_tables")
         session.agent.episodes += 1
-        
         summary = session.get_session_summary()
-        
-        print(f"\n{'='*60}")
-        print(f"[SESSION] Quiz completed!")
-        print(f"[SESSION] Accuracy: {summary['accuracy']*100:.1f}%")
-        print(f"[SESSION] Final ε: {summary['epsilon']:.3f}")
-        print(f"[SESSION] Maturity: {summary['learning_maturity']}")
-        print(f"{'='*60}\n")
     else:
-        # Get next question from the pool
-        result = session.get_next_question()
+        try:
+            result = session.get_next_question()
+        except IndexError:
+            await ensure_pool_healthy(session.topic, session.pool)
+            result = session.get_next_question()
+            
         next_question = result["question"]
+        save_pool(session.topic, session.pool, save_dir="pools")
+        await ensure_pool_healthy(session.topic, session.pool)
     
     return {
         "correct": correct,
@@ -166,23 +188,15 @@ async def submit_answer(request: SubmitAnswerRequest):
         "summary": summary
     }
 
-
 @app.post("/end-quiz")
 async def end_quiz(session_id: str):
-    """Manually end a quiz session and save progress."""
-    if session_id not in sessions:
-        raise HTTPException(status_code=404, detail="Session not found")
-    
-    session = sessions[session_id]
-    session.agent.save_policy(session.topic, save_dir="q_tables")
-    
-    summary = session.get_session_summary()
-    
-    # Clean up session
-    del sessions[session_id]
-    
-    return {"message": "Quiz ended and progress saved", "summary": summary}
-
+    """Force end a session and save Q-table."""
+    if session_id in sessions:
+        session = sessions[session_id]
+        session.agent.save_policy(session.topic, save_dir="q_tables")
+        del sessions[session_id]
+        return {"message": "Quiz session ended and policy saved."}
+    return {"message": "Session not found."}
 
 if __name__ == "__main__":
     import uvicorn

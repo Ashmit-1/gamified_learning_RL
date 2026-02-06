@@ -84,7 +84,7 @@ class StudentSession:
     
     def get_next_question(self) -> Dict:
         """
-        Use RL agent to select next action and pick the corresponding question from the pool.
+        Use RL agent to select next action and POP the corresponding question from the pool.
         
         Returns:
             The selected question dictionary.
@@ -94,15 +94,16 @@ class StudentSession:
         category = self.id_to_category[self.current_action]
         action_name = ACTION_NAMES[self.current_action]
         
-        # Pick question from category based on usage
-        index = self.category_usage[category]
-        
-        # If we ran out of questions in this category, loop back (unlikely but safe)
-        if index >= len(self.pool[category]):
-            index = index % len(self.pool[category])
-            print(f"[SESSION WARNING] Category '{category}' exhausted! Reusing question.")
+        # Check if category is empty
+        if not self.pool.get(category):
+            print(f"[SESSION WARNING] Category '{category}' is EMPTY!")
+            # Fallback: Try other categories if possible, or raise error for regeneration
+            # For robust uniqueness, we want the backend to catch this and refill.
+            raise IndexError(f"Pool category '{category}' exhausted")
             
-        question = self.pool[category][index]
+        # POP the question (absolute removal)
+        question = self.pool[category].pop(0) 
+        
         self.category_usage[category] += 1
         self.current_question = question
         self.question_count += 1
@@ -110,7 +111,7 @@ class StudentSession:
         print(f"[RL STEP {self.question_count}]")
         print(f"  State: {self._state_to_string(self.current_state)}")
         print(f"  Action: {action_name} (A{self.current_action})")
-        print(f"  Source: Pool '{category}' (Index {index})")
+        print(f"  Source: Pool '{category}' (Popped 1, {len(self.pool[category])} left)")
         print(f"  ε: {self.agent.epsilon:.3f}")
         
         return {
