@@ -64,7 +64,7 @@ async def ensure_pool_healthy(topic: str, pool: dict):
     categories = ["easy_conceptual", "medium_application", "hard_problem_solving", "easy_revision"]
     
     for cat in categories:
-        if len(pool.get(cat, [])) < 3:
+        if len(pool.get(cat, [])) < 2:
             needs_refill = True
             break
             

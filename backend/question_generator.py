@@ -8,6 +8,7 @@ import httpx
 import json
 import os
 import random
+import asyncio
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -97,7 +98,14 @@ IMPORTANT:
                 response.raise_for_status()
                 
                 data = response.json()
-                content = data['choices'][0]['message']['content'].strip()
+                if 'choices' not in data or not data['choices']:
+                    print(f"[POOL] Attempt {attempt+1}: API response missing 'choices' for {category}")
+                    continue
+                
+                content = data['choices'][0]['message'].get('content', '').strip()
+                if not content:
+                    print(f"[POOL] Attempt {attempt+1}: API response 'content' is empty for {category}")
+                    continue
                 
                 # Robust JSON extraction
                 start_index = content.find('[')
@@ -152,7 +160,6 @@ async def generate_question_pool(topic: str) -> dict:
             _, _, desc = meta
             tasks.append(generate_category_questions(topic, cat, desc))
         
-        import asyncio
         results = await asyncio.gather(*tasks)
         
         pool = {}
