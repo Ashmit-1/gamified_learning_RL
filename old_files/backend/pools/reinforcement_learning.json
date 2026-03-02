@@ -1,0 +1,504 @@
+{
+  "easy_conceptual": [
+    {
+      "text": "What is the \"exploration vs. exploitation\" dilemma?",
+      "options": [
+        "Choosing between using a deep network or a linear model",
+        "Balancing the need to try new actions with the need to use actions known to yield high reward",
+        "Deciding whether to use on\u2011policy or off\u2011policy learning",
+        "Selecting the correct discount factor for the problem"
+      ],
+      "correct_answer": "Balancing the need to try new actions with the need to use actions known to yield high reward",
+      "id": "easy_conceptual_4_7819",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What does the discount factor (\u03b3) control in reinforcement learning?",
+      "options": [
+        "The speed at which the agent updates its policy",
+        "How much future rewards are valued compared to immediate rewards",
+        "The size of the experience replay buffer",
+        "The probability of taking a random action"
+      ],
+      "correct_answer": "How much future rewards are valued compared to immediate rewards",
+      "id": "easy_conceptual_5_2507",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which component defines the set of states, actions, transition probabilities, and rewards in reinforcement learning?",
+      "options": [
+        "Neural network architecture",
+        "Markov Decision Process (MDP)",
+        "Support vector machine",
+        "Gradient descent optimizer"
+      ],
+      "correct_answer": "Markov Decision Process (MDP)",
+      "id": "easy_conceptual_6_1392",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "In Q\u2011learning, what does the Q\u2011value represent?",
+      "options": [
+        "The probability that an action will be selected",
+        "The expected cumulative reward of taking a specific action in a specific state and following the optimal policy thereafter",
+        "The learning rate used to update the network",
+        "The number of times an action has been taken"
+      ],
+      "correct_answer": "The expected cumulative reward of taking a specific action in a specific state and following the optimal policy thereafter",
+      "id": "easy_conceptual_7_4799",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What distinguishes a model\u2011based RL algorithm from a model\u2011free one?",
+      "options": [
+        "Model\u2011based methods learn a representation of the environment\u2019s dynamics, while model\u2011free methods do not",
+        "Model\u2011based methods always use deep neural networks, model\u2011free never do",
+        "Model\u2011based methods require labeled data, model\u2011free methods do not",
+        "Model\u2011based methods only work for continuous action spaces"
+      ],
+      "correct_answer": "Model\u2011based methods learn a representation of the environment\u2019s dynamics, while model\u2011free methods do not",
+      "id": "easy_conceptual_8_2277",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is an \"episode\" in the context of reinforcement learning?",
+      "options": [
+        "A single time step of interaction with the environment",
+        "A complete sequence of states, actions, and rewards that ends in a terminal state",
+        "A batch of training examples used for supervised learning",
+        "A hyperparameter that controls the learning rate"
+      ],
+      "correct_answer": "A complete sequence of states, actions, and rewards that ends in a terminal state",
+      "id": "easy_conceptual_9_2893",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    }
+  ],
+  "medium_application": [
+    {
+      "text": "A self\u2011driving car employs a model\u2011based RL algorithm that plans using a learned dynamics model. If the model is inaccurate in rare corner cases, what is the best strategy to mitigate unsafe behavior?",
+      "options": [
+        "Increase the exploration rate epsilon",
+        "Add a safety shield that overrides actions when model uncertainty is high",
+        "Reduce the discount factor to focus on immediate rewards",
+        "Train longer on the same data"
+      ],
+      "correct_answer": "Add a safety shield that overrides actions when model uncertainty is high",
+      "id": "medium_application_2_7795",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "Consider an online advertising system using a contextual bandit algorithm. Which of the following changes would most improve performance when the context space is high\u2011dimensional?",
+      "options": [
+        "Switch to a full\u2011reinforcement learning algorithm with delayed rewards",
+        "Apply dimensionality reduction (e.g., PCA) to the context features before bandit learning",
+        "Increase the exploration probability to 0.5",
+        "Use a larger learning rate for faster updates"
+      ],
+      "correct_answer": "Apply dimensionality reduction (e.g., PCA) to the context features before bandit learning",
+      "id": "medium_application_3_4427",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "In a multi\u2011agent reinforcement learning scenario for traffic signal control, agents share a common reward equal to the total waiting time of all vehicles. What problem is most likely to arise from this reward design?",
+      "options": [
+        "Agents will learn to prioritize their own intersection over others",
+        "The credit assignment problem, making it hard for an agent to know its contribution",
+        "The state space will become continuous",
+        "Exploration will be completely eliminated"
+      ],
+      "correct_answer": "The credit assignment problem, making it hard for an agent to know its contribution",
+      "id": "medium_application_4_4627",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A recommendation system uses Deep Q-Networks (DQN) to suggest items. To prevent overestimation of Q\u2011values, which architectural change is recommended?",
+      "options": [
+        "Replace ReLU activations with sigmoid",
+        "Use Double DQN with separate target networks for action selection and evaluation",
+        "Increase the size of the replay buffer",
+        "Apply a higher discount factor"
+      ],
+      "correct_answer": "Use Double DQN with separate target networks for action selection and evaluation",
+      "id": "medium_application_5_8825",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "When training an agent with Proximal Policy Optimization (PPO) on a robotic manipulation task, the clipping parameter epsilon is set too large. What is the most likely effect on learning?",
+      "options": [
+        "The policy updates become too conservative, slowing learning",
+        "The algorithm reduces to vanilla policy gradient without any clipping benefits",
+        "The agent will explore less due to smaller policy changes",
+        "The training becomes unstable because large updates are allowed"
+      ],
+      "correct_answer": "The training becomes unstable because large updates are allowed",
+      "id": "medium_application_6_1633",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "In a reinforcement learning problem where the reward is sparse (e.g., only given when a goal is reached), which technique can most effectively accelerate learning?",
+      "options": [
+        "Increasing the discount factor to 0.99",
+        "Using reward shaping to provide intermediate feedback",
+        "Decreasing the batch size during training",
+        "Applying a higher learning rate"
+      ],
+      "correct_answer": "Using reward shaping to provide intermediate feedback",
+      "id": "medium_application_7_1971",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A drone uses an actor\u2011critic algorithm where the critic approximates the state\u2011value function V(s). If the critic consistently overestimates V(s), what is the most direct consequence for the actor\u2019s policy updates?",
+      "options": [
+        "The actor will receive overly large advantage estimates, leading to exaggerated policy changes",
+        "The actor will ignore the critic\u2019s feedback entirely",
+        "The learning rate of the actor will automatically decrease",
+        "The discount factor will be effectively reduced"
+      ],
+      "correct_answer": "The actor will receive overly large advantage estimates, leading to exaggerated policy changes",
+      "id": "medium_application_8_2186",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "In a hierarchical reinforcement learning setup, a high\u2011level controller selects subgoals for a low\u2011level controller. Which of the following is a key advantage of this hierarchy when dealing with long\u2011horizon tasks?",
+      "options": [
+        "It eliminates the need for exploration at the low level",
+        "It reduces the effective planning horizon for each controller, simplifying learning",
+        "It guarantees optimality of the overall policy",
+        "It removes the need for a discount factor"
+      ],
+      "correct_answer": "It reduces the effective planning horizon for each controller, simplifying learning",
+      "id": "medium_application_9_7352",
+      "difficulty": "medium",
+      "question_type": "application"
+    }
+  ],
+  "hard_problem_solving": [
+    {
+      "text": "In a two\u2011player zero\u2011sum stochastic game with finite states and actions, which of the following conditions is sufficient for the existence of a stationary Nash equilibrium that can be found by solving a pair of coupled Bellman equations?",
+      "options": [
+        "Both players use deterministic policies.",
+        "The stage\u2011game payoff matrices are strictly diagonally dominant.",
+        "The discount factor \\(\\gamma\\) is less than 0.5.",
+        "The game satisfies the minimax property at every state."
+      ],
+      "correct_answer": "The game satisfies the minimax property at every state.",
+      "id": "hard_problem_solving_6_9632",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "The \"deadly triad\" in reinforcement learning consists of function approximation, off\u2011policy learning, and bootstrapping. Which of the following scenarios is most likely to cause divergence of the value estimates?",
+      "options": [
+        "Using linear function approximation with on\u2011policy TD(0) and a constant step\u2011size.",
+        "Applying Q\u2011learning with a deep neural network and experience replay while following an \\(\\epsilon\\)-greedy behavior policy.",
+        "Employing SARSA(\\(\\lambda\\)) with tabular representation and decreasing \\(\\epsilon\\) over time.",
+        "Training a policy gradient method with a baseline that is a linear critic."
+      ],
+      "correct_answer": "Applying Q\u2011learning with a deep neural network and experience replay while following an \\(\\epsilon\\)-greedy behavior policy.",
+      "id": "hard_problem_solving_7_5091",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "For the stochastic multi\u2011armed bandit problem, the Upper Confidence Bound (UCB1) algorithm selects the arm \\(i\\) that maximises \\(\\bar{X}_i + \\sqrt{\\frac{2\\ln n}{n_i}}\\), where \\(\\bar{X}_i\\) is the empirical mean, \\(n\\) the total pulls, and \\(n_i\\) pulls of arm \\(i\\). What is the asymptotic order of the expected cumulative regret after \\(T\\) rounds?",
+      "options": [
+        "\\(O(\\log T)\\)",
+        "\\(O(\\sqrt{T\\log T})\\)",
+        "\\(O(T^{2/3})\\)",
+        "\\(O(T)\\)"
+      ],
+      "correct_answer": "O(\\log T)",
+      "id": "hard_problem_solving_8_5123",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In inverse reinforcement learning (IRL), the learner observes optimal demonstrations from an expert. Which of the following statements explains why the reward function is generally not uniquely identifiable?",
+      "options": [
+        "Any positive linear transformation of the true reward yields the same optimal policy.",
+        "Adding a constant to the reward function changes the optimal policy but not the value function.",
+        "Reward functions that differ only on states never visited by the expert are indistinguishable.",
+        "Scaling the discount factor can compensate for changes in the reward magnitude."
+      ],
+      "correct_answer": "Reward functions that differ only on states never visited by the expert are indistinguishable.",
+      "id": "hard_problem_solving_9_5401",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Consider a continuous\u2011state, continuous\u2011action MDP with deterministic dynamics. Which of the following expressions correctly represents the Bellman optimality equation for the state\u2011value function V* (x)?",
+      "options": [
+        "V*(x) = max_a [ r(x,a) + \u03b3 V*( f(x,a) ) ]",
+        "V*(x) = r(x) + \u03b3 max_a V*( f(x,a) )",
+        "V*(x) = \u222b_a \u03c0*(a|x) [ r(x,a) + \u03b3 V*( f(x,a) ) ] da",
+        "V*(x) = max_a [ r(x,a) + \u03b3 \u222b_x' P(x'|x,a) V*(x') dx' ]"
+      ],
+      "correct_answer": "V*(x) = max_a [ r(x,a) + \u03b3 V*( f(x,a) ) ]",
+      "id": "hard_problem_solving_0_2636",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In Q\u2011learning with linear function approximation Q(s,a;\u03b8)=\u03c6(s,a)^T\u03b8, under which condition does the algorithm provably converge to the true Q* for a tabular MDP?",
+      "options": [
+        "When the feature vectors \u03c6(s,a) are orthonormal and the step\u2011size satisfies \u2211\u03b1_t=\u221e, \u2211\u03b1_t^2<\u221e.",
+        "When the feature matrix \u03a6 has full column rank and the learning rate is constant.",
+        "When the behavior policy explores all state\u2011action pairs infinitely often and the step\u2011size follows the Robbins\u2011Monro conditions.",
+        "When the reward function is deterministic and the discount factor \u03b3=1."
+      ],
+      "correct_answer": "When the behavior policy explores all state\u2011action pairs infinitely often and the step\u2011size follows the Robbins\u2011Monro conditions.",
+      "id": "hard_problem_solving_1_3080",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In the REINFORCE policy\u2011gradient estimator, adding a baseline b(s) that does not depend on the action reduces variance. Which of the following statements about the optimal baseline is true?",
+      "options": [
+        "The optimal baseline is the state\u2011value function V^\u03c0(s).",
+        "The optimal baseline is the average return over the entire episode.",
+        "The optimal baseline is zero because any non\u2011zero baseline introduces bias.",
+        "The optimal baseline is the action\u2011value function Q^\u03c0(s,a)."
+      ],
+      "correct_answer": "The optimal baseline is the state\u2011value function V^\u03c0(s).",
+      "id": "hard_problem_solving_2_9213",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Trust Region Policy Optimization (TRPO) enforces a constraint on the average KL divergence between the new and old policies. Which of the following is mathematically equivalent to this constraint when using a quadratic approximation of the KL?",
+      "options": [
+        "A linear penalty on the KL divergence added to the objective.",
+        "A Lagrangian term \u03bb\u00b7D_{KL}(\u03c0_{old}\u2016\u03c0_{new}) with \u03bb tuned adaptively.",
+        "A trust\u2011region constraint \u00bd \u0394\u03b8^T F \u0394\u03b8 \u2264 \u03b4, where F is the Fisher information matrix.",
+        "A hard clipping of the probability ratio at 1\u00b1\u03b5."
+      ],
+      "correct_answer": "A trust\u2011region constraint \u00bd \u0394\u03b8^T F \u0394\u03b8 \u2264 \u03b4, where F is the Fisher information matrix.",
+      "id": "hard_problem_solving_3_1979",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Consider an MDP with states {s1,s2}, actions {a1,a2}, discount \u03b3=0.9, and the following deterministic transition and reward tables: taking a1 in any state moves to s2 with reward 5; taking a2 in any state stays in the same state with reward 2. Starting from s1, what is the optimal deterministic policy?",
+      "options": [
+        "Choose a1 in s1 and a2 in s2.",
+        "Choose a2 in both s1 and s2.",
+        "Choose a1 in both s1 and s2.",
+        "Choose a2 in s1 and a1 in s2."
+      ],
+      "correct_answer": "Choose a1 in both s1 and s2.",
+      "id": "hard_problem_solving_4_9477",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In off\u2011policy evaluation using importance sampling, the weighted\u2011importance\u2011sampling estimator is unbiased only under which condition?",
+      "options": [
+        "When the behavior policy \u03c0_b has full support over the target policy \u03c0_e.",
+        "When the horizon is infinite.",
+        "When the rewards are bounded by 1.",
+        "When the importance weights are normalized to sum to one."
+      ],
+      "correct_answer": "When the behavior policy \u03c0_b has full support over the target policy \u03c0_e.",
+      "id": "hard_problem_solving_5_3787",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A Lyapunov function L(\u03b8) is used to prove the stability of a policy\u2011iteration algorithm. Which of the following properties must L(\u03b8) satisfy for all \u03b8 in the parameter space?",
+      "options": [
+        "L(\u03b8) \u2265 0 and L(\u03b8') \u2264 L(\u03b8) for any update \u03b8\u2192\u03b8'.",
+        "L(\u03b8) is convex and its gradient equals the policy gradient.",
+        "L(\u03b8) is bounded above and decreases monotonically under the update rule.",
+        "L(\u03b8) is positive definite and its time derivative along the algorithm dynamics is non\u2011positive."
+      ],
+      "correct_answer": "L(\u03b8) is positive definite and its time derivative along the algorithm dynamics is non\u2011positive.",
+      "id": "hard_problem_solving_6_8415",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In Soft Actor\u2011Critic (SAC), the temperature parameter \u03b1 controls the trade\u2011off between reward maximization and entropy maximization. What is the effect of annealing \u03b1 to a smaller value during training?",
+      "options": [
+        "The policy becomes more deterministic, focusing more on reward maximization.",
+        "The policy explores more, increasing stochasticity.",
+        "The Q\u2011function estimates become biased low.",
+        "The entropy term dominates, leading to higher variance in actions."
+      ],
+      "correct_answer": "The policy becomes more deterministic, focusing more on reward maximization.",
+      "id": "hard_problem_solving_7_8667",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In the options framework for hierarchical RL, an option o consists of (I_o, \u03c0_o, \u03b2_o). Which statement correctly describes the termination condition \u03b2_o(s)?",
+      "options": [
+        "\u03b2_o(s) is the probability of continuing the option in state s.",
+        "\u03b2_o(s) is the deterministic time step after which the option stops.",
+        "\u03b2_o(s) is the probability that the option terminates upon entering state s.",
+        "\u03b2_o(s) is the expected cumulative reward obtained while executing the option."
+      ],
+      "correct_answer": "\u03b2_o(s) is the probability that the option terminates upon entering state s.",
+      "id": "hard_problem_solving_8_5113",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In independent Q\u2011learning for two agents sharing a common environment, under what condition is convergence to a Nash equilibrium guaranteed?",
+      "options": [
+        "When both agents use decreasing step\u2011sizes satisfying the Robbins\u2011Monro conditions and the game is a potential game.",
+        "When the agents synchronize their updates at every time step.",
+        "When the discount factor \u03b3 is set to 0.5 for both agents.",
+        "When each agent's reward depends only on its own action (i.e., no interaction)."
+      ],
+      "correct_answer": "When both agents use decreasing step\u2011sizes satisfying the Robbins\u2011Monro conditions and the game is a potential game.",
+      "id": "hard_problem_solving_9_1712",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    }
+  ],
+  "easy_revision": [
+    {
+      "text": "What does \"RL\" stand for in the context of machine learning?",
+      "options": [
+        "Randomized Learning",
+        "Reinforcement Learning",
+        "Recursive Logic",
+        "Reward Learning"
+      ],
+      "correct_answer": "Reinforcement Learning",
+      "id": "easy_revision_0_7675",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which component of a reinforcement learning problem provides immediate feedback to the agent?",
+      "options": [
+        "State",
+        "Action",
+        "Reward",
+        "Policy"
+      ],
+      "correct_answer": "Reward",
+      "id": "easy_revision_1_3431",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "In a Markov Decision Process (MDP), what does the transition function represent?",
+      "options": [
+        "Probability of moving from one state to another given an action",
+        "Mapping of states to actions",
+        "Reward received after an action",
+        "Discount factor"
+      ],
+      "correct_answer": "Probability of moving from one state to another given an action",
+      "id": "easy_revision_2_3799",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the purpose of the discount factor (\u03b3) in reinforcement learning?",
+      "options": [
+        "Scale rewards to zero",
+        "Determine how far future rewards are considered",
+        "Adjust the learning rate",
+        "Select actions randomly"
+      ],
+      "correct_answer": "Determine how far future rewards are considered",
+      "id": "easy_revision_3_5974",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which algorithm learns a value function without requiring a model of the environment?",
+      "options": [
+        "Dynamic Programming",
+        "Monte Carlo",
+        "Temporal Difference (TD) Learning",
+        "Policy Gradient"
+      ],
+      "correct_answer": "Temporal Difference (TD) Learning",
+      "id": "easy_revision_4_2165",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "In the Q\u2011learning update rule, what does the term max_a' Q(s', a') represent?",
+      "options": [
+        "Current action's value",
+        "Maximum possible reward",
+        "Estimated value of the best action in the next state",
+        "Learning rate"
+      ],
+      "correct_answer": "Estimated value of the best action in the next state",
+      "id": "easy_revision_5_1595",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which exploration strategy selects actions uniformly at random regardless of past experience?",
+      "options": [
+        "\u03b5\u2011greedy",
+        "Upper Confidence Bound",
+        "Softmax",
+        "Random Policy"
+      ],
+      "correct_answer": "Random Policy",
+      "id": "easy_revision_6_3846",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the typical range of the learning rate (\u03b1) used in reinforcement learning algorithms?",
+      "options": [
+        "0 to 1",
+        "-1 to 1",
+        "0 to 100",
+        "1 to 10"
+      ],
+      "correct_answer": "0 to 1",
+      "id": "easy_revision_7_3529",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "In policy\u2011gradient methods, what is directly optimized during training?",
+      "options": [
+        "State\u2011value function",
+        "Action\u2011value function",
+        "Policy parameters",
+        "Reward signal"
+      ],
+      "correct_answer": "Policy parameters",
+      "id": "easy_revision_8_3368",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which term describes the situation where an agent's performance degrades because it overfits to a specific environment?",
+      "options": [
+        "Underfitting",
+        "Overfitting",
+        "Generalization",
+        "Exploration"
+      ],
+      "correct_answer": "Overfitting",
+      "id": "easy_revision_9_7882",
+      "difficulty": "easy",
+      "question_type": "revision"
+    }
+  ]
+}

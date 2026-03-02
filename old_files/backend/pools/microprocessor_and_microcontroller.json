@@ -1,0 +1,491 @@
+{
+  "easy_conceptual": [
+    {
+      "text": "In the von Neumann architecture, what is shared by both instructions and data?",
+      "options": [
+        "Separate memory banks",
+        "The same memory space",
+        "Dedicated instruction cache",
+        "A hardware multiplier"
+      ],
+      "correct_answer": "The same memory space",
+      "id": "easy_conceptual_2_5390",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What does the acronym 'GPIO' stand for in microcontroller terminology?",
+      "options": [
+        "General Purpose Input/Output",
+        "Graphics Processing Input/Output",
+        "Global Power Interface Options",
+        "Generalized Peripheral I/O"
+      ],
+      "correct_answer": "General Purpose Input/Output",
+      "id": "easy_conceptual_3_9621",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which clock signal determines the speed at which a microprocessor executes instructions?",
+      "options": [
+        "Reset signal",
+        "Power\u2011on signal",
+        "System clock",
+        "Interrupt request line"
+      ],
+      "correct_answer": "System clock",
+      "id": "easy_conceptual_4_1144",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the typical role of an interrupt in a microcontroller system?",
+      "options": [
+        "To permanently halt program execution",
+        "To periodically reset the processor",
+        "To temporarily suspend the current task and service a higher\u2011priority event",
+        "To increase the clock frequency"
+      ],
+      "correct_answer": "To temporarily suspend the current task and service a higher\u2011priority event",
+      "id": "easy_conceptual_5_2715",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which of the following memory types is volatile?",
+      "options": [
+        "ROM",
+        "Flash memory",
+        "SRAM",
+        "EEPROM"
+      ],
+      "correct_answer": "SRAM",
+      "id": "easy_conceptual_6_9144",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "In a typical 8\u2011bit microcontroller, how many bits are transferred in a single data bus operation?",
+      "options": [
+        "8 bits",
+        "16 bits",
+        "32 bits",
+        "64 bits"
+      ],
+      "correct_answer": "8 bits",
+      "id": "easy_conceptual_7_8120",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the purpose of a watchdog timer in a microcontroller?",
+      "options": [
+        "To provide a precise time\u2011of\u2011day clock",
+        "To reset the system if software becomes unresponsive",
+        "To generate PWM signals for motor control",
+        "To increase CPU clock speed dynamically"
+      ],
+      "correct_answer": "To reset the system if software becomes unresponsive",
+      "id": "easy_conceptual_8_8678",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which communication protocol is commonly used for short\u2011distance, low\u2011speed peripheral interfacing in microcontrollers?",
+      "options": [
+        "Ethernet",
+        "USB",
+        "I2C",
+        "Wi\u2011Fi"
+      ],
+      "correct_answer": "I2C",
+      "id": "easy_conceptual_9_7147",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    }
+  ],
+  "medium_application": [
+    {
+      "text": "When programming a microcontroller, you need to ensure that a variable shared between main code and an ISR is accessed atomically. Which C language construct is most appropriate?",
+      "options": [
+        "volatile keyword alone",
+        "Atomic built-in functions",
+        "Disabling interrupts around the access",
+        "Using a mutex"
+      ],
+      "correct_answer": "Disabling interrupts around the access",
+      "id": "medium_application_9_8594",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A wearable health monitor needs to run for weeks on a small coin cell battery while sampling a temperature sensor once per second. Which microcontroller characteristic is most critical to meet this requirement?",
+      "options": [
+        "High clock speed",
+        "Large flash memory",
+        "Low active current consumption",
+        "Integrated graphics accelerator"
+      ],
+      "correct_answer": "Low active current consumption",
+      "id": "medium_application_0_3753",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "An industrial controller must exchange 1 GB of data per second with a high\u2011speed camera. Which bus architecture would best satisfy the bandwidth requirement?",
+      "options": [
+        "I2C",
+        "SPI at 10\u202fMbps",
+        "Parallel 8\u2011bit GPIO",
+        "PCIe Gen2"
+      ],
+      "correct_answer": "PCIe Gen2",
+      "id": "medium_application_1_6995",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A motor control application needs to react to a fault condition within 10 \u00b5s. Which method should be used to detect the fault signal?",
+      "options": [
+        "Polling the status register in the main loop",
+        "Using a periodic timer interrupt",
+        "Configuring an external interrupt on the fault line",
+        "Checking the flag after each instruction execution"
+      ],
+      "correct_answer": "Configuring an external interrupt on the fault line",
+      "id": "medium_application_2_5757",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A bootloader must be stored in non\u2011volatile memory that can be updated without removing the chip from the board. Which memory type is most suitable?",
+      "options": [
+        "SRAM",
+        "EEPROM",
+        "External NAND flash",
+        "ROM"
+      ],
+      "correct_answer": "EEPROM",
+      "id": "medium_application_3_9360",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "To generate a 25\u202fkHz PWM signal with a 12\u2011bit resolution on a timer with a 48\u202fMHz system clock, what prescaler value should be programmed if the timer counts up to its maximum value?",
+      "options": [
+        "Prescaler = 1",
+        "Prescaler = 2",
+        "Prescaler = 4",
+        "Prescaler = 8"
+      ],
+      "correct_answer": "Prescaler = 2",
+      "id": "medium_application_4_5228",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "During firmware development, a designer needs to set breakpoints and view register contents in real time. Which debug interface provides the most comprehensive access on modern ARM Cortex\u2011M devices?",
+      "options": [
+        "JTAG",
+        "SWD",
+        "UART",
+        "I2C"
+      ],
+      "correct_answer": "JTAG",
+      "id": "medium_application_5_9467",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "An IoT node must reduce power consumption when no sensor data is needed for 5 minutes. Which low\u2011power mode should be entered to keep RAM contents while shutting down the CPU and most peripherals?",
+      "options": [
+        "Run mode",
+        "Idle mode",
+        "Standby mode",
+        "Shutdown mode"
+      ],
+      "correct_answer": "Standby mode",
+      "id": "medium_application_6_6146",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A microcontroller samples an 8\u2011bit ADC at 1\u202fMS/s and must store the data in a buffer without CPU intervention. Which peripheral should be used to transfer the data to memory efficiently?",
+      "options": [
+        "General\u2011purpose I/O",
+        "Timer",
+        "DMA controller",
+        "UART"
+      ],
+      "correct_answer": "DMA controller",
+      "id": "medium_application_7_2340",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A digital signal processing (DSP) algorithm requires simultaneous access to program instructions and data samples. Which architecture is best suited for this workload?",
+      "options": [
+        "Von Neumann",
+        "Harvard",
+        "CISC",
+        "RISC"
+      ],
+      "correct_answer": "Harvard",
+      "id": "medium_application_8_9708",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "To achieve an exact UART baud rate of 115200\u202fbps with a 16\u202fMHz crystal, which divisor should be programmed in the UART baud rate generator (assuming integer division only)?",
+      "options": [
+        "Divisor = 8",
+        "Divisor = 9",
+        "Divisor = 16",
+        "Divisor = 17"
+      ],
+      "correct_answer": "Divisor = 9",
+      "id": "medium_application_9_3479",
+      "difficulty": "medium",
+      "question_type": "application"
+    }
+  ],
+  "hard_problem_solving": [
+    {
+      "text": "A microcontroller runs at 72\u202fMHz with an average CPI of 1.5 for its main loop. The instruction cache miss penalty is 30 cycles, and the miss rate is 0.2\u202f%. What is the average execution time (in microseconds) of a loop containing 400 instructions?",
+      "options": [
+        "8.33\u202f\u00b5s",
+        "8.40\u202f\u00b5s",
+        "8.44\u202f\u00b5s",
+        "8.50\u202f\u00b5s"
+      ],
+      "correct_answer": "8.44\u202f\u00b5s",
+      "id": "hard_problem_solving_2_1473",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A 16\u2011bit timer peripheral runs from a 48\u202fMHz peripheral clock. To generate a PWM signal of 20\u202fkHz with a 37.5\u202f% duty cycle, which values should be loaded into the period register (ARR) and the compare register (CCR) assuming up\u2011count mode?",
+      "options": [
+        "ARR = 2399, CCR = 900",
+        "ARR = 2399, CCR = 899",
+        "ARR = 2399, CCR = 900",
+        "ARR = 2399, CCR = 899"
+      ],
+      "correct_answer": "ARR = 2399, CCR = 900",
+      "id": "hard_problem_solving_3_8987",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A Moore state machine has states A, B, C, and D. The output is 1 only in state C. The transition table is: From A on input 0 \u2192 B, on 1 \u2192 C; From B on 0 \u2192 D, on 1 \u2192 A; From C on 0 \u2192 C, on 1 \u2192 D; From D on 0 \u2192 A, on 1 \u2192 B. If the machine starts in state A and receives the input sequence 1\u20110\u20111\u20111\u20110, what is the output sequence?",
+      "options": [
+        "0\u202f0\u202f0\u202f0\u202f0",
+        "0\u202f0\u202f0\u202f1\u202f0",
+        "0\u202f0\u202f1\u202f0\u202f0",
+        "0\u202f1\u202f0\u202f0\u202f0"
+      ],
+      "correct_answer": "0\u202f0\u202f0\u202f1\u202f0",
+      "id": "hard_problem_solving_4_9634",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "An 8\u2011bit microcontroller reads a 16\u2011bit ADC result stored in two registers ADCL (low byte) and ADCH (high byte) in left\u2011justified mode. After a conversion, ADCH contains 0xA3. What is the actual 10\u2011bit ADC value?",
+      "options": [
+        "0x28F",
+        "0x2A3",
+        "0xA30",
+        "0xA3C"
+      ],
+      "correct_answer": "0x2A3",
+      "id": "hard_problem_solving_5_6499",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A low\u2011power MCU has three power states: Active (5\u202fmA at 3\u202fV), Sleep (0.5\u202fmA at 3\u202fV), and Deep\u2011Sleep (10\u202f\u00b5A at 3\u202fV). If the device spends 70\u202f% of the time in Active, 20\u202f% in Sleep, and 10\u202f% in Deep\u2011Sleep, what is the average current consumption?",
+      "options": [
+        "3.62\u202fmA",
+        "3.55\u202fmA",
+        "3.51\u202fmA",
+        "3.48\u202fmA"
+      ],
+      "correct_answer": "3.55\u202fmA",
+      "id": "hard_problem_solving_6_7602",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "An I\u00b2C bus has a total capacitance of 400\u202fpF. The I\u00b2C specification limits the maximum rise time (tr) to 300\u202fns. If the pull\u2011up resistor value is R, the rise time can be approximated by tr \u2248 0.847\u202f\u00b7\u202fR\u202f\u00b7\u202fC. What is the maximum allowable pull\u2011up resistance?",
+      "options": [
+        "885\u202f\u03a9",
+        "885\u202fk\u03a9",
+        "885\u202f\u03a9 (rounded)",
+        "885\u202f\u03a9 (approx.)"
+      ],
+      "correct_answer": "885\u202f\u03a9",
+      "id": "hard_problem_solving_7_7216",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In a 32\u2011bit RISC ISA, an ADD instruction format is: opcode[6:0] | rd[4:0] | funct3[2:0] | rs1[4:0] | rs2[4:0] | funct7[6:0]. If opcode for ADD is 0b0110011, funct3 is 0b000, funct7 is 0b0000000, rd = x5, rs1 = x10, rs2 = x15, what is the 32\u2011bit binary encoding of this instruction?",
+      "options": [
+        "0b0000000_01111_01010_000_00101_0110011",
+        "0b0000000_01111_01010_000_00101_0110011",
+        "0b0000000_01111_01010_000_00101_0110011",
+        "0b0000000_01111_01010_000_00101_0110011"
+      ],
+      "correct_answer": "0b0000000_01111_01010_000_00101_0110011",
+      "id": "hard_problem_solving_8_3944",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A peripheral is memory\u2011mapped at address range 0x4000\u202f0000 to 0x4000\u202f0FFF. Which of the following address decoding logic expressions correctly selects this peripheral using the highest 12 address lines (A31\u2011A20)?",
+      "options": [
+        "A31..A20 = 0b0100_0000_0000",
+        "A31..A20 = 0b0100_0000_0001",
+        "A31..A20 = 0b0100_0000_1111",
+        "A31..A20 = 0b0100_0001_0000"
+      ],
+      "correct_answer": "A31..A20 = 0b0100_0000_0000",
+      "id": "hard_problem_solving_9_5628",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    }
+  ],
+  "easy_revision": [
+    {
+      "text": "What does CPU stand for?",
+      "options": [
+        "Central Processing Unit",
+        "Computer Peripheral Unit",
+        "Central Power Unit",
+        "Control Program Unit"
+      ],
+      "correct_answer": "Central Processing Unit",
+      "id": "easy_revision_0_2409",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which microcontroller family commonly uses a Harvard architecture?",
+      "options": [
+        "AVR",
+        "x86",
+        "MIPS",
+        "PowerPC"
+      ],
+      "correct_answer": "AVR",
+      "id": "easy_revision_1_1799",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "In a microcontroller, what is the purpose of the reset pin?",
+      "options": [
+        "To initialize the device and start program execution from address 0",
+        "To increase the clock speed",
+        "To provide power to the device",
+        "To enable external interrupts"
+      ],
+      "correct_answer": "To initialize the device and start program execution from address 0",
+      "id": "easy_revision_2_3174",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which of the following is a non\u2011volatile memory type typically used to store firmware in microcontrollers?",
+      "options": [
+        "Flash",
+        "SRAM",
+        "Cache",
+        "Register file"
+      ],
+      "correct_answer": "Flash",
+      "id": "easy_revision_3_4588",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What does PWM stand for in the context of microcontroller peripherals?",
+      "options": [
+        "Pulse Width Modulation",
+        "Power Wide Management",
+        "Peripheral Write Mode",
+        "Programmed Wave Memory"
+      ],
+      "correct_answer": "Pulse Width Modulation",
+      "id": "easy_revision_4_6255",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which bus width is standard for the original 8086 microprocessor?",
+      "options": [
+        "16 bits",
+        "8 bits",
+        "32 bits",
+        "64 bits"
+      ],
+      "correct_answer": "16 bits",
+      "id": "easy_revision_5_6358",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "In a microcontroller, the term \"GPIO\" refers to:",
+      "options": [
+        "General\u2011purpose input/output pins",
+        "Global processing operating interface",
+        "Graphical programming I/O",
+        "General power input output"
+      ],
+      "correct_answer": "General\u2011purpose input/output pins",
+      "id": "easy_revision_6_9553",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which clock source provides the most precise timing for a microcontroller?",
+      "options": [
+        "Crystal oscillator",
+        "RC oscillator",
+        "Internal RC oscillator",
+        "External PLL"
+      ],
+      "correct_answer": "Crystal oscillator",
+      "id": "easy_revision_7_9630",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the typical voltage level for TTL logic high?",
+      "options": [
+        "2.0 V to 5.0 V",
+        "0 V to 0.8 V",
+        "1.2 V to 1.8 V",
+        "3.3 V only"
+      ],
+      "correct_answer": "2.0 V to 5.0 V",
+      "id": "easy_revision_8_3663",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which instruction set architecture is used by Intel's 8086 and its successors?",
+      "options": [
+        "x86",
+        "ARM",
+        "MIPS",
+        "RISC\u2011V"
+      ],
+      "correct_answer": "x86",
+      "id": "easy_revision_9_2505",
+      "difficulty": "easy",
+      "question_type": "revision"
+    }
+  ]
+}

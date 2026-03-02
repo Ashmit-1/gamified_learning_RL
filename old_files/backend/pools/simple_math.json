@@ -1,0 +1,465 @@
+{
+  "easy_conceptual": [
+    {
+      "text": "In place value, what digit does the tens place represent?",
+      "options": [
+        "10s",
+        "100s",
+        "1s",
+        "1000s"
+      ],
+      "correct_answer": "10s",
+      "id": "easy_conceptual_8_3944",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the result of dividing a number by 1?",
+      "options": [
+        "The same number",
+        "Zero",
+        "Infinity",
+        "The number squared"
+      ],
+      "correct_answer": "The same number",
+      "id": "easy_conceptual_9_6974",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the value of the additive identity?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Any number"
+      ],
+      "correct_answer": "0",
+      "id": "easy_conceptual_0_3187",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What does the term \"prime number\" mean?",
+      "options": [
+        "A number divisible only by 1 and itself",
+        "A number divisible by 2",
+        "A number that is even",
+        "A number greater than 100"
+      ],
+      "correct_answer": "A number divisible only by 1 and itself",
+      "id": "easy_conceptual_1_8069",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "In a subtraction operation a - b, which number is called the minuend?",
+      "options": [
+        "a",
+        "b",
+        "difference",
+        "quotient"
+      ],
+      "correct_answer": "a",
+      "id": "easy_conceptual_2_3767",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "The term \"coefficient\" refers to what in an algebraic term?",
+      "options": [
+        "The numerical factor multiplying a variable",
+        "The variable itself",
+        "The exponent",
+        "The result"
+      ],
+      "correct_answer": "The numerical factor multiplying a variable",
+      "id": "easy_conceptual_3_1810",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the product of any number and 1 called?",
+      "options": [
+        "The original number",
+        "Zero",
+        "One",
+        "Infinity"
+      ],
+      "correct_answer": "The original number",
+      "id": "easy_conceptual_4_2110",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which property states that a + b = b + a?",
+      "options": [
+        "Commutative property",
+        "Associative property",
+        "Distributive property",
+        "Identity property"
+      ],
+      "correct_answer": "Commutative property",
+      "id": "easy_conceptual_5_9607",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "In the fraction 3/5, the number 5 is the...",
+      "options": [
+        "Denominator",
+        "Numerator",
+        "Whole number",
+        "Divisor"
+      ],
+      "correct_answer": "Denominator",
+      "id": "easy_conceptual_6_8392",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the term for a number that can be expressed as a ratio of two integers?",
+      "options": [
+        "Rational number",
+        "Irrational number",
+        "Whole number",
+        "Prime number"
+      ],
+      "correct_answer": "Rational number",
+      "id": "easy_conceptual_7_8152",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "The result of dividing a non\u2011zero number by itself is called?",
+      "options": [
+        "One",
+        "Zero",
+        "The original number",
+        "Infinity"
+      ],
+      "correct_answer": "One",
+      "id": "easy_conceptual_8_9575",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which shape has exactly three sides?",
+      "options": [
+        "Triangle",
+        "Square",
+        "Rectangle",
+        "Pentagon"
+      ],
+      "correct_answer": "Triangle",
+      "id": "easy_conceptual_9_3729",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    }
+  ],
+  "medium_application": [
+    {
+      "text": "A train leaves station A heading toward station B at 80 km/h. Another train leaves station B heading toward A 2 hours later at 100 km/h. The distance between stations is 600 km. How far from station A will the two trains meet?",
+      "options": [
+        "320 km",
+        "355 km",
+        "400 km",
+        "440 km"
+      ],
+      "correct_answer": "355 km",
+      "id": "medium_application_4_6257",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A bank account earns 3% interest compounded annually. If you deposit $1,000, what will be the balance after 2 years?",
+      "options": [
+        "$1,030",
+        "$1,060.90",
+        "$1,090",
+        "$1,120"
+      ],
+      "correct_answer": "$1,060.90",
+      "id": "medium_application_5_1578",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "If 5 pencils cost $2.25, how much would 12 pencils cost at the same rate?",
+      "options": [
+        "$5.00",
+        "$5.40",
+        "$5.80",
+        "$6.00"
+      ],
+      "correct_answer": "$5.40",
+      "id": "medium_application_6_8568",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A theater has 20 rows with 15 seats each. If 30% of the seats are empty, how many seats are occupied?",
+      "options": [
+        "180",
+        "210",
+        "240",
+        "270"
+      ],
+      "correct_answer": "210",
+      "id": "medium_application_7_1937",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A cyclist travels 18 km in 45 minutes. What is the average speed in km/h?",
+      "options": [
+        "20 km/h",
+        "24 km/h",
+        "30 km/h",
+        "36 km/h"
+      ],
+      "correct_answer": "24 km/h",
+      "id": "medium_application_8_2928",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A class of 24 students has a ratio of boys to girls of 3:5. How many girls are in the class?",
+      "options": [
+        "10",
+        "12",
+        "15",
+        "18"
+      ],
+      "correct_answer": "15",
+      "id": "medium_application_9_2850",
+      "difficulty": "medium",
+      "question_type": "application"
+    }
+  ],
+  "hard_problem_solving": [
+    {
+      "text": "A sequence starts 2, 6, 12, 20, ... What is the 10th term?",
+      "options": [
+        "90",
+        "100",
+        "110",
+        "120"
+      ],
+      "correct_answer": "110",
+      "id": "hard_problem_solving_1_7275",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A rectangular garden has perimeter 84 meters and its length is twice its width. What is the area of the garden in square meters?",
+      "options": [
+        "336",
+        "392",
+        "448",
+        "504"
+      ],
+      "correct_answer": "392",
+      "id": "hard_problem_solving_2_8898",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Three consecutive integers have a product of 504. What is the smallest of these integers?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": "7",
+      "id": "hard_problem_solving_3_6607",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A bag contains red, blue, and green marbles. The probability of drawing a red marble is 1/4, blue is 1/3, and the rest are green. If there are 60 marbles total, how many green marbles are there?",
+      "options": [
+        "20",
+        "25",
+        "30",
+        "35"
+      ],
+      "correct_answer": "25",
+      "id": "hard_problem_solving_4_5685",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A train travels from City A to City B at 60 km/h and returns at 40 km/h. What is the average speed for the whole round trip?",
+      "options": [
+        "45 km/h",
+        "48 km/h",
+        "50 km/h",
+        "52 km/h"
+      ],
+      "correct_answer": "48 km/h",
+      "id": "hard_problem_solving_5_8328",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "If x and y are positive integers such that 2^x = 3^y + 1, what is the value of x?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": "2",
+      "id": "hard_problem_solving_6_7687",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Find the smallest positive integer n such that n! ends with exactly three zeros.",
+      "options": [
+        "10",
+        "12",
+        "15",
+        "20"
+      ],
+      "correct_answer": "15",
+      "id": "hard_problem_solving_7_7128",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A sequence is defined by a_1 = 3 and a_{n+1} = 2a_n + 1. What is a_5?",
+      "options": [
+        "31",
+        "47",
+        "63",
+        "95"
+      ],
+      "correct_answer": "63",
+      "id": "hard_problem_solving_8_6629",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Two numbers have a harmonic mean of 12 and an arithmetic mean of 20. What is the product of the two numbers?",
+      "options": [
+        "200",
+        "240",
+        "280",
+        "320"
+      ],
+      "correct_answer": "240",
+      "id": "hard_problem_solving_9_5594",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    }
+  ],
+  "easy_revision": [
+    {
+      "text": "What is 8 \u00d7 3?",
+      "options": [
+        "24",
+        "21",
+        "27",
+        "23"
+      ],
+      "correct_answer": "24",
+      "id": "easy_revision_2_2635",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is 36 \u00f7 4?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "6"
+      ],
+      "correct_answer": "9",
+      "id": "easy_revision_3_3628",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is 0.75 expressed as a fraction?",
+      "options": [
+        "3/4",
+        "1/2",
+        "2/3",
+        "5/8"
+      ],
+      "correct_answer": "3/4",
+      "id": "easy_revision_4_9712",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the perimeter of a rectangle with length 5 cm and width 3 cm?",
+      "options": [
+        "16 cm",
+        "15 cm",
+        "13 cm",
+        "18 cm"
+      ],
+      "correct_answer": "16 cm",
+      "id": "easy_revision_5_9043",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the value of 5\u00b2?",
+      "options": [
+        "25",
+        "20",
+        "15",
+        "30"
+      ],
+      "correct_answer": "25",
+      "id": "easy_revision_6_9679",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "If a triangle has angles of 50\u00b0 and 60\u00b0, what is the measure of the third angle?",
+      "options": [
+        "70\u00b0",
+        "80\u00b0",
+        "90\u00b0",
+        "100\u00b0"
+      ],
+      "correct_answer": "70\u00b0",
+      "id": "easy_revision_7_8695",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is 1/3 + 1/6?",
+      "options": [
+        "1/2",
+        "1/4",
+        "2/3",
+        "5/6"
+      ],
+      "correct_answer": "1/2",
+      "id": "easy_revision_8_7710",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Convert 250 centimeters to meters.",
+      "options": [
+        "2.5 m",
+        "25 m",
+        "0.25 m",
+        "5 m"
+      ],
+      "correct_answer": "2.5 m",
+      "id": "easy_revision_9_9972",
+      "difficulty": "easy",
+      "question_type": "revision"
+    }
+  ]
+}

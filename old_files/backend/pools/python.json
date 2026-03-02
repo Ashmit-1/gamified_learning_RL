@@ -1,0 +1,374 @@
+{
+  "easy_conceptual": [
+    {
+      "text": "What does the len() function return?",
+      "options": [
+        "Number of characters in a string",
+        "Number of items in a collection",
+        "Index of last element",
+        "Memory usage"
+      ],
+      "correct_answer": "Number of items in a collection",
+      "id": "easy_conceptual_3_8648",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which operator is used for exponentiation in Python?",
+      "options": [
+        "**",
+        "^",
+        "%",
+        "//"
+      ],
+      "correct_answer": "**",
+      "id": "easy_conceptual_4_1360",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the output of print(2 * 3 + 4)?",
+      "options": [
+        "10",
+        "14",
+        "8",
+        "12"
+      ],
+      "correct_answer": "10",
+      "id": "easy_conceptual_5_2620",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which of these is a valid variable name in Python?",
+      "options": [
+        "2ndPlace",
+        "_value",
+        "class",
+        "def"
+      ],
+      "correct_answer": "_value",
+      "id": "easy_conceptual_6_5390",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "How do you import the math module?",
+      "options": [
+        "import math",
+        "using math",
+        "include math",
+        "require math"
+      ],
+      "correct_answer": "import math",
+      "id": "easy_conceptual_7_5060",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the result of 5 // 2 in Python?",
+      "options": [
+        "2",
+        "2.5",
+        "3",
+        "2.0"
+      ],
+      "correct_answer": "2",
+      "id": "easy_conceptual_8_1498",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "Which statement correctly creates a list?",
+      "options": [
+        "mylist = (1,2,3)",
+        "mylist = [1,2,3]",
+        "mylist = {1,2,3}",
+        "mylist = <1,2,3>"
+      ],
+      "correct_answer": "mylist = [1,2,3]",
+      "id": "easy_conceptual_9_7002",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    }
+  ],
+  "medium_application": [
+    {
+      "text": "Write a generator function cum_sum(iterable) that yields the cumulative sum of the numbers in iterable. Which of the following definitions is correct?",
+      "options": [
+        "def cum_sum(iterable):\n    total = 0\n    for x in iterable:\n        total += x\n        yield total",
+        "def cum_sum(iterable):\n    for i in range(len(iterable)):\n        yield sum(iterable[:i])",
+        "def cum_sum(iterable):\n    return [sum(iterable[:i+1]) for i in range(len(iterable))]",
+        "def cum_sum(iterable):\n    total = 1\n    for x in iterable:\n        total *= x\n        yield total"
+      ],
+      "correct_answer": "def cum_sum(iterable):\n    total = 0\n    for x in iterable:\n        total += x\n        yield total",
+      "id": "medium_application_5_5783",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "You need to handle both ValueError and TypeError in the same except block while re\u2011raising other exceptions. Which syntax is correct?",
+      "options": [
+        "try:\n    ...\nexcept (ValueError, TypeError) as e:\n    handle(e)\nexcept Exception:\n    raise",
+        "try:\n    ...\nexcept ValueError, TypeError as e:\n    handle(e)",
+        "try:\n    ...\nexcept ValueError or TypeError as e:\n    handle(e)",
+        "try:\n    ...\nexcept (ValueError & TypeError) as e:\n    handle(e)"
+      ],
+      "correct_answer": "try:\n    ...\nexcept (ValueError, TypeError) as e:\n    handle(e)\nexcept Exception:\n    raise",
+      "id": "medium_application_6_4338",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "Two threads increment a shared list counter by appending 1, each performing 1000 appends. Without synchronization, what is a possible outcome after both threads finish?",
+      "options": [
+        "The list length could be less than 2000 due to a race condition.",
+        "The list length will always be exactly 2000.",
+        "A TypeError will be raised because lists are not thread\u2011safe.",
+        "The program will deadlock."
+      ],
+      "correct_answer": "The list length could be less than 2000 due to a race condition.",
+      "id": "medium_application_7_6030",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "Given the list items = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'], which statement using collections.Counter returns the three most common fruits in order?",
+      "options": [
+        "Counter(items).most_common(3)",
+        "Counter(items).most_common()[:3]",
+        "sorted(Counter(items).items(), key=lambda x: x[1], reverse=True)[:3]",
+        "All of the above produce the same result"
+      ],
+      "correct_answer": "All of the above produce the same result",
+      "id": "medium_application_8_1367",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "You want to construct a path to a file \"log.txt\" inside a \"logs\" directory that is a sibling of the current script, using pathlib for cross\u2011platform compatibility. Which code does this correctly?",
+      "options": [
+        "from pathlib import Path\nlog_path = Path(__file__).parent / 'logs' / 'log.txt'",
+        "import os\nlog_path = os.path.join(__file__, '..', 'logs', 'log.txt')",
+        "from pathlib import Path\nlog_path = Path('..') / 'logs' / 'log.txt'",
+        "from pathlib import Path\nlog_path = Path(__file__).resolve().parent.parent / 'logs' / 'log.txt'"
+      ],
+      "correct_answer": "from pathlib import Path\nlog_path = Path(__file__).parent / 'logs' / 'log.txt'",
+      "id": "medium_application_9_5315",
+      "difficulty": "medium",
+      "question_type": "application"
+    }
+  ],
+  "hard_problem_solving": [
+    {
+      "text": "Given the following code, what will be printed?\\n\\n```python\\nimport itertools\\nseq = itertools.chain.from_iterable([[1, 2], [3], [4, 5]])\\nprint(list(seq))\\n```",
+      "options": [
+        "[1, 2, 3, 4, 5]",
+        "[[1, 2], [3], [4, 5]]",
+        "[[1, 2, 3, 4, 5]]",
+        "Error: chain expects iterables"
+      ],
+      "correct_answer": "[1, 2, 3, 4, 5]",
+      "id": "hard_problem_solving_8_2559",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What will be the output of the following code?\n\n```python\nclass Meta(type):\n    def __new__(mcls, name, bases, namespace):\n        namespace['added'] = lambda self: 'added'\n        return super().__new__(mcls, name, bases, namespace)\n\nclass Base(metaclass=Meta):\n    def method(self):\n        return 'original'\n\nobj = Base()\nprint(obj.method(), obj.added())\n```",
+      "options": [
+        "original added",
+        "original <function>",
+        "Error: 'Base' object has no attribute 'added'",
+        "Error: metaclass conflict"
+      ],
+      "correct_answer": "original added",
+      "id": "hard_problem_solving_0_7290",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Consider the following generator function:\n\n```python\ndef gen():\n    for i in range(3):\n        try:\n            yield i\n        finally:\n            print(f'cleanup {i}')\n\ng = gen()\nnext(g)\nnext(g)\n``` \nWhat is printed to the console after executing the code above?",
+      "options": [
+        "cleanup 0\\ncleanup 1",
+        "cleanup 0",
+        "cleanup 1",
+        "No output"
+      ],
+      "correct_answer": "cleanup 0",
+      "id": "hard_problem_solving_1_8731",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Which of the following statements about the `asyncio` event loop is FALSE?",
+      "options": [
+        "The default event loop policy on Windows uses ProactorEventLoop starting from Python 3.8.",
+        "Calling `loop.run_until_complete` multiple times on the same loop is safe and idempotent.",
+        "`loop.create_task` schedules a coroutine to run as soon as possible on the loop.",
+        "`await asyncio.sleep(0)` yields control back to the event loop."
+      ],
+      "correct_answer": "Calling `loop.run_until_complete` multiple times on the same loop is safe and idempotent.",
+      "id": "hard_problem_solving_2_3652",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Given the following code snippet, what is the value of `result` after execution?\n\n```python\nfrom functools import reduce\n\ndef op(acc, x):\n    return acc ^ x if x % 2 == 0 else acc & x\n\nseq = [1, 2, 3, 4, 5]\nresult = reduce(op, seq, 0)\n```",
+      "options": [
+        "4",
+        "0",
+        "1",
+        "5"
+      ],
+      "correct_answer": "4",
+      "id": "hard_problem_solving_3_7610",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What does the `__slots__` attribute do in a Python class, and which of the following is a direct consequence of defining it?",
+      "options": [
+        "It disables inheritance for the class; subclasses cannot be created.",
+        "It prevents the creation of a `__dict__` for each instance, reducing memory usage.",
+        "It makes all methods of the class static by default.",
+        "It forces the class to be a dataclass."
+      ],
+      "correct_answer": "It prevents the creation of a `__dict__` for each instance, reducing memory usage.",
+      "id": "hard_problem_solving_4_4086",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In CPython, which of the following statements about reference counting and garbage collection is TRUE?",
+      "options": [
+        "Reference counting alone can collect all cyclic garbage without the need for a cyclic GC.",
+        "The cyclic garbage collector runs before every bytecode instruction.",
+        "Objects with a `__del__` method are never collected by the cyclic GC, even if they are part of a cycle.",
+        "The `gc.collect()` function triggers a full collection of both generations."
+      ],
+      "correct_answer": "Objects with a `__del__` method are never collected by the cyclic GC, even if they are part of a cycle.",
+      "id": "hard_problem_solving_5_3844",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What will be printed by the following code?\n\n```python\nclass C:\n    def __init__(self):\n        self.val = 0\n    def __iadd__(self, other):\n        self.val += other\n        return self\n\nc = C()\nc += 5\nprint(c.val)\n```",
+      "options": [
+        "5",
+        "0",
+        "TypeError",
+        "None"
+      ],
+      "correct_answer": "5",
+      "id": "hard_problem_solving_6_8634",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Which of the following `typing` constructs can be used to express a function that accepts any callable returning an `int` and takes exactly two positional arguments of type `str` and `float` respectively?",
+      "options": [
+        "`Callable[[str, float], int]`",
+        "`Callable[[int], str]`",
+        "`Protocol` with `__call__(self, str, float) -> int`",
+        "`Union[Callable[[str, float], int], Callable[..., int]]`"
+      ],
+      "correct_answer": "`Callable[[str, float], int]`",
+      "id": "hard_problem_solving_7_1315",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "Consider the following context manager implementation:\n\n```python\nclass Manager:\n    def __init__(self, resource):\n        self.resource = resource\n    def __enter__(self):\n        print('acquire')\n        return self.resource\n    def __exit__(self, exc_type, exc, tb):\n        print('release')\n        return True\n\nwith Manager('R') as r:\n    print('inside', r)\n    raise ValueError('boom')\nprint('after')\n``` \nWhat is the exact output?",
+      "options": [
+        "acquire\\ninside R\\nrelease\\nafter",
+        "acquire\\ninside R\\nrelease",
+        "acquire\\ninside R\\nrelease\\nTraceback (most recent call last): ...",
+        "acquire\\ninside R\\nTraceback (most recent call last): ..."
+      ],
+      "correct_answer": "acquire\ninside R\nrelease\nafter",
+      "id": "hard_problem_solving_8_7081",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "What is the time complexity of the following function in terms of `n`?\n\n```python\ndef f(lst):\n    total = 0\n    for i in range(len(lst)):\n        for j in range(i, len(lst)):\n            total += lst[j]\n    return total\n```",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(n^3)"
+      ],
+      "correct_answer": "O(n^2)",
+      "id": "hard_problem_solving_9_9287",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    }
+  ],
+  "easy_revision": [
+    {
+      "text": "Which of these is a correct way to import the math module?",
+      "options": [
+        "import math",
+        "include math",
+        "using math",
+        "require math"
+      ],
+      "correct_answer": "import math",
+      "id": "easy_revision_5_5964",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the result of 'Hello' + 'World'?",
+      "options": [
+        "HelloWorld",
+        "Hello World",
+        "Hello+World",
+        "Error"
+      ],
+      "correct_answer": "HelloWorld",
+      "id": "easy_revision_6_1238",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which statement creates a set with elements 1, 2, 3?",
+      "options": [
+        "{1,2,3}",
+        "[1,2,3]",
+        "(1,2,3)",
+        "set(1,2,3)"
+      ],
+      "correct_answer": "{1,2,3}",
+      "id": "easy_revision_7_5347",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which operator checks for equality?",
+      "options": [
+        "==",
+        "=",
+        "!",
+        "<>"
+      ],
+      "correct_answer": "==",
+      "id": "easy_revision_8_1330",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the file extension for a Python source file?",
+      "options": [
+        ".py",
+        ".python",
+        ".pyt",
+        ".pt"
+      ],
+      "correct_answer": ".py",
+      "id": "easy_revision_9_5202",
+      "difficulty": "easy",
+      "question_type": "revision"
+    }
+  ]
+}

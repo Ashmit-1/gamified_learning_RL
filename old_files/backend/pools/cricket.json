@@ -1,0 +1,439 @@
+{
+  "easy_conceptual": [
+    {
+      "text": "What is the \"crease\" in cricket?",
+      "options": [
+        "The line marking the boundary of the field",
+        "The area where the bowler runs up before delivery",
+        "The marked lines at each end of the pitch indicating safe ground for batsmen",
+        "The zone where fielders are not allowed to stand"
+      ],
+      "correct_answer": "The marked lines at each end of the pitch indicating safe ground for batsmen",
+      "id": "easy_conceptual_4_9013",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What does an \"over\" consist of in cricket?",
+      "options": [
+        "Six legal deliveries bowled by the same bowler",
+        "Eight wides bowled consecutively",
+        "Four balls bowled from each end of the pitch",
+        "Ten runs scored by a batsman"
+      ],
+      "correct_answer": "Six legal deliveries bowled by the same bowler",
+      "id": "easy_conceptual_5_3709",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is the primary role of the wicket\u2011keeper?",
+      "options": [
+        "To bowl fast deliveries from the opposite end",
+        "To field at the boundary and catch high balls",
+        "To stand behind the stumps and catch or stump the batsman",
+        "To act as the team captain and set field placements"
+      ],
+      "correct_answer": "To stand behind the stumps and catch or stump the batsman",
+      "id": "easy_conceptual_6_4714",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is a \"no\u2011ball\"?",
+      "options": [
+        "A delivery that hits the batsman's helmet",
+        "An illegal delivery for which the batting side receives one extra run and the ball must be re\u2011bowled",
+        "A ball that lands outside the boundary line",
+        "A delivery that results in a wicket without any runs"
+      ],
+      "correct_answer": "An illegal delivery for which the batting side receives one extra run and the ball must be re\u2011bowled",
+      "id": "easy_conceptual_7_4977",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What does \"run out\" mean?",
+      "options": [
+        "The batsman is dismissed because the ball hits the stumps while he is outside his crease",
+        "The bowler delivers a ball that is too fast",
+        "The fielding side scores a run without the batters' consent",
+        "The batting side voluntarily ends the innings"
+      ],
+      "correct_answer": "The batsman is dismissed because the ball hits the stumps while he is outside his crease",
+      "id": "easy_conceptual_8_5952",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    },
+    {
+      "text": "What is a \"boundary\" in cricket?",
+      "options": [
+        "A line that marks the edge of the pitch where the bowler must release the ball",
+        "The distance a batsman must run to score a single",
+        "The outer edge of the playing field; hitting the ball beyond it scores four or six runs",
+        "A term for the line separating the two batting ends"
+      ],
+      "correct_answer": "The outer edge of the playing field; hitting the ball beyond it scores four or six runs",
+      "id": "easy_conceptual_9_2711",
+      "difficulty": "easy",
+      "question_type": "conceptual"
+    }
+  ],
+  "medium_application": [
+    {
+      "text": "In a limited-overs match, a team uses a powerplay with only two fielders outside the 30-yard circle. Which type of bowler is most likely to be effective?",
+      "options": [
+        "Fast bowler with yorkers",
+        "Spin bowler with flight",
+        "Medium pacer with swing",
+        "All-rounder with bouncers"
+      ],
+      "correct_answer": "Fast bowler with yorkers",
+      "id": "medium_application_6_7924",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A wicket-keeper attempts a stumping but the batsman had already made a run. What is the correct ruling?",
+      "options": [
+        "Stumping stands",
+        "Run out",
+        "No dismissal",
+        "Dead ball"
+      ],
+      "correct_answer": "Run out",
+      "id": "medium_application_7_9958",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A team is 150/4 after 30 overs in a 50-over ODI. The pitch is deteriorating and spin is aiding. Which batting approach should the middle order adopt?",
+      "options": [
+        "Aggressive slog",
+        "Consolidate with singles and rotate",
+        "Play ultra-defensive",
+        "Target only boundaries"
+      ],
+      "correct_answer": "Consolidate with singles and rotate",
+      "id": "medium_application_8_8785",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A bowler bowls a delivery that hits the batsman's helmet placed on the ground. What is the ruling?",
+      "options": [
+        "Dead ball",
+        "No-ball",
+        "Wide",
+        "Free hit"
+      ],
+      "correct_answer": "Dead ball",
+      "id": "medium_application_9_3265",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A captain decides to bowl a spinner on a green, seaming pitch in the 20th over of a T20 match. Which factor makes this decision risky?",
+      "options": [
+        "The ball will swing more on a green pitch",
+        "Spinners are more effective on dry, cracked surfaces",
+        "Green pitches favor fast bowlers due to extra seam movement",
+        "The ball will lose shine faster on a green pitch"
+      ],
+      "correct_answer": "Green pitches favor fast bowlers due to extra seam movement",
+      "id": "medium_application_0_6042",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "During a Test match, a batsman scores 150 runs but faces only 120 balls. Which statistic best reflects his scoring efficiency?",
+      "options": [
+        "Strike rate",
+        "Batting average",
+        "Run rate",
+        "Boundary percentage"
+      ],
+      "correct_answer": "Strike rate",
+      "id": "medium_application_1_8493",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A bowler has figures of 10 overs, 2 maidens, 40 runs, and 5 wickets. What is his economy rate?",
+      "options": [
+        "4.0 runs per over",
+        "5.0 runs per over",
+        "3.0 runs per over",
+        "6.0 runs per over"
+      ],
+      "correct_answer": "4.0 runs per over",
+      "id": "medium_application_2_9294",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "In a limited\u2011overs game, a team needs 30 runs off the last 3 overs with 2 wickets remaining. Which batting strategy is most appropriate?",
+      "options": [
+        "Target the boundaries and rotate strike",
+        "Play defensively and wait for a mistake",
+        "Try hitting sixes on every ball",
+        "Focus on singles only"
+      ],
+      "correct_answer": "Target the boundaries and rotate strike",
+      "id": "medium_application_3_7912",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A player is awarded the 'Man of the Match' after taking 4 catches, scoring 20 runs, and effecting 2 run\u2011outs. Which aspect of his performance most likely contributed to the award?",
+      "options": [
+        "His fielding contributions",
+        "His batting strike rate",
+        "His bowling economy",
+        "His number of boundaries"
+      ],
+      "correct_answer": "His fielding contributions",
+      "id": "medium_application_4_5129",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A bowler delivers a ball that hits the batsman's pad and goes onto the stumps. The umpire gives out bowled. Which law governs this dismissal?",
+      "options": [
+        "Law 32 \u2013 Bowled",
+        "Law 33 \u2013 Caught",
+        "Law 35 \u2013 Hit the ball twice",
+        "Law 36 \u2013 Obstructing the field"
+      ],
+      "correct_answer": "Law 32 \u2013 Bowled",
+      "id": "medium_application_5_6959",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A team scores 250 runs in 50 overs in a One Day International. Their run rate is 5 runs per over. If they lose 5 wickets, what is their batting average per wicket?",
+      "options": [
+        "50.0",
+        "45.0",
+        "55.0",
+        "40.0"
+      ],
+      "correct_answer": "50.0",
+      "id": "medium_application_6_4965",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "During a match, a bowler is reported for exceeding the permissible arm\u2011extension limit. Which ICC regulation does this relate to?",
+      "options": [
+        "Illegal bowling action (straightening of the arm)",
+        "Mankading rule",
+        "Ball tampering regulations",
+        "Fielding restriction rules"
+      ],
+      "correct_answer": "Illegal bowling action (straightening of the arm)",
+      "id": "medium_application_7_6447",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "In a T20 match, a team sets a target of 180 runs. The opposition scores 175/9 in 20 overs. Which metric shows how close the chase was?",
+      "options": [
+        "Net Run Rate",
+        "Required Run Rate",
+        "Average partnership",
+        "Dot ball percentage"
+      ],
+      "correct_answer": "Required Run Rate",
+      "id": "medium_application_8_4107",
+      "difficulty": "medium",
+      "question_type": "application"
+    },
+    {
+      "text": "A batsman hits a ball that rolls to the boundary after touching the ground. How many runs are added to the total?",
+      "options": [
+        "Four runs",
+        "Six runs",
+        "Five runs",
+        "Three runs"
+      ],
+      "correct_answer": "Four runs",
+      "id": "medium_application_9_8989",
+      "difficulty": "medium",
+      "question_type": "application"
+    }
+  ],
+  "hard_problem_solving": [
+    {
+      "text": "In a World Cup group stage, Team X has played 5 matches, winning 3, losing 1, and one match abandoned (no result). Their total points are 7. What is Team X\u2019s net run rate if they have scored 1020 runs in 100 overs and conceded 950 runs in 95 overs?",
+      "options": [
+        "+0.74",
+        "+0.70",
+        "+0.68",
+        "+0.65"
+      ],
+      "correct_answer": "+0.70",
+      "id": "hard_problem_solving_3_5318",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A batsman is on 84 runs off 60 balls (strike rate 140). He needs to reach a personal milestone of 100 runs in the next 15 balls. Assuming he scores only boundaries (4s or 6s) and singles, what is the minimum number of sixes he must hit to achieve the milestone?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "3",
+      "id": "hard_problem_solving_4_5496",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "During a rain\u2011affected 30\u2011over match, Team B\u2019s revised target is 180 runs. After 10 overs they are 45/2. If they want to maintain a required run rate (RRR) that is 0.5 runs per over higher than the current RRR, how many runs must they score in the next 5 overs?",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
+      "correct_answer": "34",
+      "id": "hard_problem_solving_5_1749",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In a Test match, a bowler\u2019s average is 25.4 and his strike rate is 55 balls per wicket. If he bowls 20 overs in an innings, how many wickets is he expected to take and how many runs is he expected to concede?",
+      "options": [
+        "3 wickets, 76 runs",
+        "4 wickets, 101 runs",
+        "4 wickets, 76 runs",
+        "5 wickets, 127 runs"
+      ],
+      "correct_answer": "4 wickets, 101 runs",
+      "id": "hard_problem_solving_6_9667",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A fielding side is in the Powerplay 1 (overs 1\u201110) of a T20 match. How many fielders are allowed outside the 30\u2011yard circle during this period?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correct_answer": "2",
+      "id": "hard_problem_solving_7_5997",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "In a 50\u2011over game, a team needs 250 runs to win. After 45 overs they are 220/6. If they score exactly 30 runs in the last 5 overs, what will be their final run rate and will they win?",
+      "options": [
+        "5.00 runs per over, win",
+        "5.00 runs per over, tie",
+        "5.00 runs per over, lose",
+        "5.20 runs per over, win"
+      ],
+      "correct_answer": "5.00 runs per over, win",
+      "id": "hard_problem_solving_8_4917",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    },
+    {
+      "text": "A bowler bowls a spell of 8 overs, conceding 48 runs and taking 4 wickets. If his economy improves by 0.5 runs per over in the next 4\u2011over spell while maintaining the same strike rate, how many runs will he concede and how many wickets will he take in that second spell?",
+      "options": [
+        "16 runs, 2 wickets",
+        "18 runs, 2 wickets",
+        "20 runs, 2 wickets",
+        "22 runs, 2 wickets"
+      ],
+      "correct_answer": "18 runs, 2 wickets",
+      "id": "hard_problem_solving_9_5448",
+      "difficulty": "hard",
+      "question_type": "problem-solving"
+    }
+  ],
+  "easy_revision": [
+    {
+      "text": "What term is used when a batsman scores 100 runs in a single innings?",
+      "options": [
+        "Half\u2011century",
+        "Century",
+        "Double century",
+        "Triple century"
+      ],
+      "correct_answer": "Century",
+      "id": "easy_revision_4_7918",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which piece of equipment protects the batsman's legs?",
+      "options": [
+        "Helmet",
+        "Gloves",
+        "Pads",
+        "Thigh guard"
+      ],
+      "correct_answer": "Pads",
+      "id": "easy_revision_5_4616",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the name of the fielding position located on the off side, close to the wicketkeeper?",
+      "options": [
+        "Silly point",
+        "Cover",
+        "Mid\u2011off",
+        "Square leg"
+      ],
+      "correct_answer": "Silly point",
+      "id": "easy_revision_6_8533",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "In cricket scoring, what does the term \"duck\" mean?",
+      "options": [
+        "Scoring zero runs",
+        "Scoring one run",
+        "Scoring ten runs",
+        "Scoring fifty runs"
+      ],
+      "correct_answer": "Scoring zero runs",
+      "id": "easy_revision_7_1658",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "Which format of cricket is played over five days?",
+      "options": [
+        "One Day International",
+        "Twenty20",
+        "Test cricket",
+        "The Hundred"
+      ],
+      "correct_answer": "Test cricket",
+      "id": "easy_revision_8_3818",
+      "difficulty": "easy",
+      "question_type": "revision"
+    },
+    {
+      "text": "What is the name of the rule that allows a batsman to be dismissed if the ball hits the stumps while he is out of his crease?",
+      "options": [
+        "Run out",
+        "Stumped",
+        "Hit wicket",
+        "LBW"
+      ],
+      "correct_answer": "Run out",
+      "id": "easy_revision_9_6757",
+      "difficulty": "easy",
+      "question_type": "revision"
+    }
+  ]
+}
