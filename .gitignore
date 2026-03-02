@@ -1,48 +1,16 @@
-# Python
+# Python-generated files
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+*.py[oc]
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
 wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+*.egg-info
 
-# Virtual Environments
-.venv/
-venv/
-ENV/
-env/
-backend/.venv/
+# Virtual environments
+.venv
 
-# Environment Variables
+#Environment Variables
 .env
-backend/.env
 
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-backend/*.log
+#db files
+*.db
