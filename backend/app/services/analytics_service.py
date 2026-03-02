@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from backend.app.db.models import QuizSession, User, Topic, Response, Question
+from db.models import QuizSession, User, Topic, Response, Question
 from typing import List, Dict, Any
 
 class AnalyticsService:

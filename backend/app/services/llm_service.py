@@ -2,7 +2,7 @@ import json
 from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
-from backend.app.core.config import settings
+from core.config import settings
 from typing import Dict, Any
 
 class LLMService:

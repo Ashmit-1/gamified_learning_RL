@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any
-from backend.app.db.session import get_db
-from backend.app.db.models import Topic, QuizSession, User
-from backend.app.schemas.quiz import TopicRead, TeacherAnalytics, TeacherCreateTopic
-from backend.app.services.analytics_service import AnalyticsService
-from backend.app.routers.auth import get_current_user
+from db.session import get_db
+from db.models import Topic, QuizSession, User
+from schemas.quiz import TopicRead, TeacherAnalytics, TeacherCreateTopic
+from services.analytics_service import AnalyticsService
+from routers.auth import get_current_user
 
 router = APIRouter(prefix="/teacher", tags=["teacher"])
 

@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
-from backend.app.db.models import QuizSession, Question, Response, Topic, User, UserProgress
-from backend.app.schemas.quiz import QuestionRead, AnswerSubmission, QuizStartResult, AnswerResponse
-from backend.app.services.rl_service import RLService
-from backend.app.services.llm_service import llm_service
-from backend.app.services.rl_agent import ACTION_TO_PARAMS, ACTION_NAMES
+from db.models import QuizSession, Question, Response, Topic, User, UserProgress
+from schemas.quiz import QuestionRead, AnswerSubmission, QuizStartResult, AnswerResponse
+from services.rl_service import RLService
+from services.llm_service import llm_service
+from services.rl_agent import ACTION_TO_PARAMS, ACTION_NAMES
 from typing import List, Dict, Any, Optional
 
 class QuizService:

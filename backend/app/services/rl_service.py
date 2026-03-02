@@ -1,7 +1,7 @@
 import numpy as np
 from sqlalchemy.orm import Session
-from backend.app.db.models import UserProgress
-from backend.app.services.rl_agent import (
+from db.models import UserProgress
+from services.rl_agent import (
     QLearningAgent, 
     compute_state as agent_compute_state, 
     compute_reward as agent_compute_reward,

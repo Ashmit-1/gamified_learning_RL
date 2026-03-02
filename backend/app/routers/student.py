@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any
-from backend.app.db.session import get_db
-from backend.app.db.models import Topic, QuizSession
-from backend.app.schemas.quiz import (
+from db.session import get_db
+from db.models import Topic, QuizSession
+from schemas.quiz import (
     TopicRead, 
     QuizStartResult, 
     AnswerSubmission, 
@@ -12,9 +12,9 @@ from backend.app.schemas.quiz import (
     SessionStats,
     TeacherCreateTopic
 )
-from backend.app.services.quiz_service import QuizService
-from backend.app.services.analytics_service import AnalyticsService
-from backend.app.routers.auth import get_current_user
+from services.quiz_service import QuizService
+from services.analytics_service import AnalyticsService
+from routers.auth import get_current_user
 
 router = APIRouter(prefix="/student", tags=["student"])
 

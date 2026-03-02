@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.app.db.session import engine, Base, SessionLocal
-from backend.app.db.models import Topic
-from backend.app.routers import auth, student, teacher
+from db.session import engine, Base, SessionLocal
+from db.models import Topic
+from routers import auth, student, teacher
 import uvicorn
 
 # Create tables
@@ -13,7 +13,7 @@ app = FastAPI(title="AI Adaptive Quiz Platform")
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173", "https://gyan.appwrite.network"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -40,4 +40,4 @@ def read_root():
     return {"message": "Welcome to AI Adaptive Quiz Backend"}
 
 if __name__ == "__main__":
-    uvicorn.run("backend.app.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
